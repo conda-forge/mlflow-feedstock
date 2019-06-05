@@ -1,20 +1,19 @@
 {% set name = "mlflow" %}
-{% set version = "0.9.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bcd8518e4269c058792caf0419b45346f9bf8f92d48ac66ef136e3bb87e8ef72
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: "2c1d1c4e99793fee7c1c8b0e63f89784eb85840611088c2a34df03a549ce362d"
 
 build:
   number: 0
   entry_points:
     - mlflow=mlflow.cli:cli
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
-  noarch: python
 
 requirements:
   host:
@@ -22,16 +21,15 @@ requirements:
     - setuptools
     - pip
   run:
-    - boto3 >=1.7.12
+    - alembic
     - click >=7.0
-    - cloudpickle >=0.6.1
+    - cloudpickle
     - databricks-cli >=0.8.0
     - docker-py >=3.6.0
     - entrypoints
     - flask
     - gitpython >=2.1.0
     - gunicorn
-    - mleap >=0.8.1
     - numpy
     - pandas
     - pip
@@ -41,21 +39,23 @@ requirements:
     - pyyaml
     - querystring_parser
     - requests >=2.17.3
-    - scikit-learn
-    - scipy
     - simplejson
     - six >=1.10.0
+    - sqlalchemy
     - sqlparse
 
 test:
   imports:
     - mlflow
+    - mlflow.alembic
+    - mlflow.alembic.versions
     - mlflow.azureml
     - mlflow.entities
     - mlflow.models
     - mlflow.projects
     - mlflow.protos
     - mlflow.pyfunc
+    - mlflow.pytorch
     - mlflow.rfunc
     - mlflow.sagemaker
     - mlflow.server
