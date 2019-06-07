@@ -10,7 +10,7 @@ source:
   sha256: "2c1d1c4e99793fee7c1c8b0e63f89784eb85840611088c2a34df03a549ce362d"
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - mlflow=mlflow.cli:cli
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
