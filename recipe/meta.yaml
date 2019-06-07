@@ -17,7 +17,7 @@ build:
 
 requirements:
   host:
-    - python >= 3.6
+    - python
     - setuptools
     - pip
   run:
@@ -34,7 +34,7 @@ requirements:
     - pandas
     - pip
     - protobuf >=3.6.0
-    - python >= 3.6
+    - python >=3.6.0
     - python-dateutil
     - pyyaml
     - querystring_parser
