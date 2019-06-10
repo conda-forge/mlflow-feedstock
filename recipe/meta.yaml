@@ -14,10 +14,11 @@ build:
   entry_points:
     - mlflow=mlflow.cli:cli
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  noarch: python
 
 requirements:
   host:
-    - python
+    - python >=3.6.0
     - setuptools
     - pip
   run:
