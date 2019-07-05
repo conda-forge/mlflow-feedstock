@@ -44,19 +44,6 @@ requirements:
     - sqlalchemy
     - sqlparse
 
-outputs:
-  - name: mlflow
-    version: {{ version }}
-    files:
-      - "lib/python{{ PY_VER }}/site-packages/mlflow"
-  - name: mlflow-ui-dbg
-    version: {{ version }}
-    noarch: python
-    requirements:
-      run:
-        - {{ pin_subpackage('mlflow', exact=True) }}
-    script: install_maps.sh
-
 test:
   imports:
     - mlflow
@@ -77,6 +64,21 @@ test:
     - mlflow.utils
   commands:
     - mlflow --help
+
+outputs:
+  - name: mlflow
+    version: {{ version }}
+    files:
+      - "lib/python{{ PY_VER }}/site-packages/mlflow"
+  - name: mlflow-ui-dbg
+    version: {{ version }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('mlflow', exact=True) }}
+    script: install_maps.sh
+
 
 about:
   home: https://mlflow.org/
