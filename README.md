@@ -30,6 +30,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow-green.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--ui--dbg-green.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) |
 
 Installing mlflow
 =================
@@ -40,10 +41,10 @@ Installing `mlflow` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `mlflow` can be installed with:
+Once the `conda-forge` channel has been enabled, `mlflow, mlflow-ui-dbg` can be installed with:
 
 ```
-conda install mlflow
+conda install mlflow mlflow-ui-dbg
 ```
 
 It is possible to list all of the versions of `mlflow` available on your platform with:

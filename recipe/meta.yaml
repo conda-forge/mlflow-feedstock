@@ -10,11 +10,10 @@ source:
   sha256: "2c1d1c4e99793fee7c1c8b0e63f89784eb85840611088c2a34df03a549ce362d"
 
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - mlflow=mlflow.cli:cli
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
@@ -65,6 +64,21 @@ test:
     - mlflow.utils
   commands:
     - mlflow --help
+
+outputs:
+  - name: mlflow
+    version: {{ version }}
+    files:
+      - "lib/python{{ PY_VER }}/site-packages/mlflow"
+  - name: mlflow-ui-dbg
+    version: {{ version }}
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('mlflow', exact=True) }}
+    script: install_maps.sh
+
 
 about:
   home: https://mlflow.org/
