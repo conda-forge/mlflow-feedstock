@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -10,7 +10,7 @@ source:
   sha256: "2c1d1c4e99793fee7c1c8b0e63f89784eb85840611088c2a34df03a549ce362d"
 
 build:
-  number: 3
+  number: 0
   noarch: python
   entry_points:
     - mlflow=mlflow.cli:cli
