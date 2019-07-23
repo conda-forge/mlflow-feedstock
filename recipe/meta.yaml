@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "2c1d1c4e99793fee7c1c8b0e63f89784eb85840611088c2a34df03a549ce362d"
+  sha256: "77f44dc2dc79f843cd7a2d2a6371066363bef248d5739e520243db0aacb1c037"
 
 build:
   number: 0
@@ -24,11 +24,12 @@ requirements:
     - alembic
     - click >=7.0
     - cloudpickle
-    - databricks-cli >=0.8.0
+    - databricks-cli >=0.8.7
     - docker-py >=3.6.0
     - entrypoints
     - flask
     - gitpython >=2.1.0
+    - gorilla
     - gunicorn
     - numpy
     - pandas
