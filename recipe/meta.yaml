@@ -48,8 +48,6 @@ requirements:
 test:
   imports:
     - mlflow
-    - mlflow.alembic
-    - mlflow.alembic.versions
     - mlflow.azureml
     - mlflow.entities
     - mlflow.models
