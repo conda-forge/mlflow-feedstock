@@ -10,14 +10,14 @@ source:
   sha256: "07177bfe2a45b7c39fb378d3646619cde876398fd2a81743f3c7cc726f9c4c8e"
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - mlflow=mlflow.cli:cli
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.5
     - setuptools
     - pip
   run:
