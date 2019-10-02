@@ -7,13 +7,15 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "07177bfe2a45b7c39fb378d3646619cde876398fd2a81743f3c7cc726f9c4c8e"
+  sha256: 2f21d40bed12eba8c9c5432b5ca7ba3da06baa31066d332a1b57f679600588ab
 
 build:
   number: 0
-  noarch: python
-  entry_points:
-    - mlflow=mlflow.cli:cli
+  skip: True  # [py2k]
+  # Not possible anymore because of the waitress/gunicorn split
+  # noarch: python
+  # entry_points:
+  #   - mlflow=mlflow.cli:cli
 
 requirements:
   host:
@@ -21,21 +23,22 @@ requirements:
     - setuptools
     - pip
   run:
+    - python >=3.5
     - alembic
     - click >=7.0
     - cloudpickle
     - databricks-cli >=0.8.7
-    - docker-py >=3.6.0
+    - docker-py >=4
     - entrypoints
     - flask
     - gitpython >=2.1.0
     - gorilla
-    - gunicorn
+    - gunicorn  # [not win]
+    - waitress  # [win]
     - numpy
     - pandas
     - pip
     - protobuf >=3.6.0
-    - python >=3.6.0
     - python-dateutil
     - pyyaml
     - querystring_parser
@@ -68,6 +71,7 @@ outputs:
   - name: mlflow
     version: {{ version }}
     files:
+      - "bin/mlflow*"
       - "lib/python{{ PY_VER }}/site-packages/mlflow"
   - name: mlflow-ui-dbg
     version: {{ version }}
