@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - setuptools
     - pip
   run:
-    - python >=3.5
+    - python
     - alembic
     - click >=7.0
     - cloudpickle
@@ -75,10 +75,9 @@ outputs:
       - "lib/python{{ PY_VER }}/site-packages/mlflow"
   - name: mlflow-ui-dbg
     version: {{ version }}
-    build:
-      noarch: python
     requirements:
       run:
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
     script: install_maps.sh
 
