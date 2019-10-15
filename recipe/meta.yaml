@@ -73,6 +73,7 @@ outputs:
     files:
       - "bin/mlflow*"
       - "lib/python{{ PY_VER }}/site-packages/mlflow"
+{% if not win %}
   - name: mlflow-ui-dbg
     version: {{ version }}
     requirements:
@@ -80,6 +81,7 @@ outputs:
         - python
         - {{ pin_subpackage('mlflow', exact=True) }}
     script: install_maps.sh
+{% endif %}
 
 
 about:
