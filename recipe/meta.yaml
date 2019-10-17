@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py2k]
+  skip: True  # [py<35]
   # Not possible anymore because of the waitress/gunicorn split
   # noarch: python
   # entry_points:
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - setuptools
     - pip
   run:
-    - python >=3.5
+    - python
     - alembic
     - click >=7.0
     - cloudpickle
@@ -65,22 +65,26 @@ test:
     - mlflow.tracking
     - mlflow.utils
   commands:
-    - mlflow --help
+    - mlflow --help  # [not win]
 
 outputs:
   - name: mlflow
     version: {{ version }}
     files:
-      - "bin/mlflow*"
-      - "lib/python{{ PY_VER }}/site-packages/mlflow"
+      - "bin/mlflow*"  # [unix]
+      - "lib/python{{ PY_VER }}/site-packages/mlflow"  # [unix]
+      - "lib/python{{ PY_VER }}/site-packages/mlflow-*"  # [unix]
+      - "Scripts\\mlflow*"  # [win]
+      - "Lib\\site-packages\\mlflow"  # [win]
+      - "Lib\\site-packages\\mlflow-*"  # [win]
   - name: mlflow-ui-dbg
     version: {{ version }}
-    build:
-      noarch: python
     requirements:
       run:
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
-    script: install_maps.sh
+    script: install_maps.bat  # [win]
+    script: install_maps.sh  # [unix]
 
 
 about:
