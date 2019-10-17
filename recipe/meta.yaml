@@ -65,7 +65,7 @@ test:
     - mlflow.tracking
     - mlflow.utils
   commands:
-    - mlflow --help
+    - mlflow --help  # [not win]
 
 outputs:
   - name: mlflow
@@ -73,8 +73,10 @@ outputs:
     files:
       - "bin/mlflow*"  # [unix]
       - "lib/python{{ PY_VER }}/site-packages/mlflow"  # [unix]
+      - "lib/python{{ PY_VER }}/site-packages/mlflow-*"  # [unix]
       - "Scripts\\mlflow*"  # [win]
       - "Lib\\site-packages\\mlflow"  # [win]
+      - "Lib\\site-packages\\mlflow-*"  # [win]
   - name: mlflow-ui-dbg
     version: {{ version }}
     requirements:
