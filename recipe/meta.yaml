@@ -38,7 +38,6 @@ requirements:
     - numpy
     - pandas
     - pip
-    - prometheus-flask-exporter
     - protobuf >=3.6.0
     - python-dateutil
     - pyyaml
