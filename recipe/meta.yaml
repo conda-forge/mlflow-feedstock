@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 9116d82be380c32fa465049d14b217c4c200ad11614f4c6674e6b524b2935206
+  sha256: c5a9bda701498d44a3a5b1df646ab08691b482fca326c69e0b91c594b0788487
 
 build:
   number: 0
