@@ -10,7 +10,7 @@ source:
   sha256: c5a9bda701498d44a3a5b1df646ab08691b482fca326c69e0b91c594b0788487
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<35]
   # Not possible anymore because of the waitress/gunicorn split
   # noarch: python
@@ -37,7 +37,7 @@ requirements:
     - waitress  # [win]
     - numpy
     - pandas
-    - pip
+    - prometheus_flask_exporter
     - protobuf >=3.6.0
     - python-dateutil
     - pyyaml
@@ -49,6 +49,8 @@ requirements:
     - sqlparse
 
 test:
+  requires:
+    - pip
   imports:
     - mlflow
     - mlflow.azureml
@@ -61,11 +63,13 @@ test:
     - mlflow.rfunc
     - mlflow.sagemaker
     - mlflow.server
+    - mlflow.server.prometheus_exporter
     - mlflow.store
     - mlflow.tracking
     - mlflow.utils
   commands:
     - mlflow --help  # [not win]
+    - pip check
 
 outputs:
   - name: mlflow
