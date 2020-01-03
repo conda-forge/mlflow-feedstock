@@ -69,7 +69,7 @@ test:
     - mlflow.utils
   commands:
     - mlflow --help  # [not win]
-    - pip check
+    - pip check  # [not win]
 
 outputs:
   - name: mlflow
