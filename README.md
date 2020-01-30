@@ -201,6 +201,7 @@ Feedstock Maintainers
 * [@aarondav](https://github.com/aarondav/)
 * [@ahirreddy](https://github.com/ahirreddy/)
 * [@andrewmchen](https://github.com/andrewmchen/)
+* [@aveshcsingh](https://github.com/aveshcsingh/)
 * [@dbczumar](https://github.com/dbczumar/)
 * [@jaroslawk](https://github.com/jaroslawk/)
 * [@mateiz](https://github.com/mateiz/)
