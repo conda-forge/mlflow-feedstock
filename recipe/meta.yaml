@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.5.0" %}
+{% set version = "1.6.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,10 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: c5a9bda701498d44a3a5b1df646ab08691b482fca326c69e0b91c594b0788487
+  sha256: 87c493aeed3a90d324d9acefe480b3edc121fc9aa1a40d0116fea7275b74f573
 
 build:
-  number: 1
+  number: 0
   skip: True  # [py<35]
   # Not possible anymore because of the waitress/gunicorn split
   # noarch: python
