@@ -35,7 +35,6 @@ requirements:
     - gorilla
     - gunicorn  # [not win]
     - waitress  # [win]
-    - mlflow-dbstore
     - numpy
     - pandas
     - prometheus_flask_exporter
