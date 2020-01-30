@@ -102,16 +102,17 @@ about:
 
 extra:
   recipe-maintainers:
-    - andrewmchen
-    - jaroslawk
-    - ahirreddy
     - aarondav
-    - mateiz
+    - ahirreddy
+    - andrewmchen
+    - aveshcsingh
     - dbczumar
-    - smurching
-    - tomasatdatabricks
-    - sueann
-    - pogil
+    - jaroslawk
+    - mateiz
     - mparkhe
-    - zangr
+    - pogil
+    - smurching
+    - sueann
+    - tomasatdatabricks
     - xhochy
+    - zangr
