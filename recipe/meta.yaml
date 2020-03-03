@@ -1,17 +1,17 @@
 {% set name = "mlflow" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 87c493aeed3a90d324d9acefe480b3edc121fc9aa1a40d0116fea7275b74f573
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 1fdc53758d127b6041f6729d06459b35cfd4c9186810c5bfceb2d5a202b2c911
 
 build:
   number: 0
-  skip: True  # [py<35]
+  skip: true  # [py<35]
   # Not possible anymore because of the waitress/gunicorn split
   # noarch: python
   # entry_points:
@@ -75,12 +75,12 @@ outputs:
   - name: mlflow
     version: {{ version }}
     files:
-      - "bin/mlflow*"  # [unix]
-      - "lib/python{{ PY_VER }}/site-packages/mlflow"  # [unix]
-      - "lib/python{{ PY_VER }}/site-packages/mlflow-*"  # [unix]
-      - "Scripts\\mlflow*"  # [win]
-      - "Lib\\site-packages\\mlflow"  # [win]
-      - "Lib\\site-packages\\mlflow-*"  # [win]
+      - bin/mlflow*    # [unix]
+      - lib/python{{ PY_VER }}/site-packages/mlflow    # [unix]
+      - lib/python{{ PY_VER }}/site-packages/mlflow-*    # [unix]
+      - Scripts\mlflow*     # [win]
+      - Lib\site-packages\mlflow      # [win]
+      - Lib\site-packages\mlflow-*      # [win]
   - name: mlflow-ui-dbg
     version: {{ version }}
     requirements:
