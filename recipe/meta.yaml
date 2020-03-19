@@ -45,7 +45,7 @@ requirements:
     - requests >=2.17.3
     - simplejson
     - six >=1.10.0
-    - sqlalchemy
+    - sqlalchemy <=1.3.13
     - sqlparse
 
 test:
