@@ -10,7 +10,7 @@ source:
   sha256: bab1b95da17ffb1856fec35fc1a0bc9d16e1811e41610a97c2c955884eb6ac53
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<35]
   # Not possible anymore because of the waitress/gunicorn split
   # noarch: python
