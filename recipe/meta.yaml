@@ -84,6 +84,8 @@ outputs:
   - name: mlflow-ui-dbg
     version: {{ version }}
     requirements:
+      build:
+        - posix # [win]
       run:
         - python
         - {{ pin_subpackage('mlflow', exact=True) }}
