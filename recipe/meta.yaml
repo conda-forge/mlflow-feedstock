@@ -85,7 +85,7 @@ outputs:
     version: {{ version }}
     requirements:
       build:
-        - posix # [win]
+        - posix  # [win]
       run:
         - python
         - {{ pin_subpackage('mlflow', exact=True) }}
