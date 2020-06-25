@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.8.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,50 +7,42 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bab1b95da17ffb1856fec35fc1a0bc9d16e1811e41610a97c2c955884eb6ac53
+  sha256: 4f71086f2a07916369905548649db2f4573a73c569bde9f6c61a46749c93a54a
 
 build:
   number: 0
-  skip: true  # [py<35]
-  # Not possible anymore because of the waitress/gunicorn split
-  # noarch: python
-  # entry_points:
-  #   - mlflow=mlflow.cli:cli
 
 requirements:
   host:
-    - python
-    - setuptools
     - pip
-  run:
     - python
+  run:
     - alembic
+    - azure-storage-blob >=12.0
     - click >=7.0
     - cloudpickle
     - databricks-cli >=0.8.7
-    - docker-py >=4
+    - docker-py >=4.0.0
     - entrypoints
     - flask
     - gitpython >=2.1.0
     - gorilla
     - gunicorn  # [not win]
-    - waitress  # [win]
     - numpy
     - pandas
     - prometheus_flask_exporter
     - protobuf >=3.6.0
+    - python
     - python-dateutil
     - pyyaml
     - querystring_parser
     - requests >=2.17.3
-    - simplejson
     - six >=1.10.0
     - sqlalchemy <=1.3.13
     - sqlparse
+    - waitress  # [win]
 
 test:
-  requires:
-    - pip
   imports:
     - mlflow
     - mlflow.azureml
@@ -70,6 +62,8 @@ test:
   commands:
     - mlflow --help  # [not win]
     - pip check  # [not win]
+  requires:
+    - pip
 
 outputs:
   - name: mlflow
@@ -93,7 +87,7 @@ outputs:
 
 about:
   home: https://mlflow.org/
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
   summary: MLflow is an open source platform for the machine learning lifecycle.

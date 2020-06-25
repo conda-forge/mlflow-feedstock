@@ -3,7 +3,7 @@ About mlflow
 
 Home: https://mlflow.org/
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
 Feedstock license: BSD 3-Clause
 
@@ -26,7 +26,7 @@ Current build status
     <td>Drone</td>
     <td>
       <a href="https://cloud.drone.io/conda-forge/mlflow-feedstock">
-        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/master.svg?label=Linux">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/mlflow-feedstock/master.svg?label=Linux">
       </a>
     </td>
   </tr>
