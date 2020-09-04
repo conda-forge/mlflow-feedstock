@@ -10,7 +10,7 @@ source:
   sha256: 443d92761ac051c64f71ff51601a62c418a3f789642eda5238e933fc7c5bf5e2
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -78,6 +78,11 @@ outputs:
   - name: mlflow-ui-dbg
     version: {{ version }}
     requirements:
+      # we need to use python in host to generate a unique build string
+      # otherwise the exact pin below means this package gets made only
+      # for one python version
+      host:
+        - python
       run:
         - python
         - {{ pin_subpackage('mlflow', exact=True) }}
