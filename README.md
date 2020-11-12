@@ -5,11 +5,13 @@ Home: https://mlflow.org/
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mlflow-feedstock/blob/master/LICENSE.txt)
 
 Summary: MLflow is an open source platform for the machine learning lifecycle.
 
+Development: https://github.com/mlflow/mlflow
 
+Documentation: https://mlflow.org
 
 Current build status
 ====================
