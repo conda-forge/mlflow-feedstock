@@ -21,7 +21,6 @@ requirements:
     - python
   run:
     - alembic <=1.4.1
-    - azure-storage-blob >=12.0
     - click >=7.0
     - cloudpickle
     - databricks-cli >=0.8.7
@@ -29,18 +28,16 @@ requirements:
     - entrypoints
     - flask
     - gitpython >=2.1.0
-    - gorilla
     - gunicorn  # [not win]
     - numpy
     - pandas
     - prometheus_flask_exporter
     - protobuf >=3.6.0
     - python
-    - python-dateutil
+    - pytz
     - pyyaml
     - querystring_parser
     - requests >=2.17.3
-    - six >=1.10.0
     - sqlalchemy
     - sqlparse >=0.3.1
     - waitress  # [win]
