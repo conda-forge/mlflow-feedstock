@@ -45,185 +45,367 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.6.____73_pypy</td>
+              <td>linux_64_mlflow_variantdefaultpython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantdefaultpython3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.6.____cpython</td>
+              <td>linux_64_mlflow_variantdefaultpython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantdefaultpython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.7.____cpython</td>
+              <td>linux_64_mlflow_variantdefaultpython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantdefaultpython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.8.____cpython</td>
+              <td>linux_64_mlflow_variantdefaultpython3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
+              <td>linux_64_mlflow_variantdefaultpython3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_python3.6.____73_pypy</td>
+              <td>linux_64_mlflow_variantskinnypython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.6.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantskinnypython3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_python3.6.____cpython</td>
+              <td>linux_64_mlflow_variantskinnypython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantskinnypython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_python3.7.____cpython</td>
+              <td>linux_64_mlflow_variantskinnypython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantskinnypython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_python3.8.____cpython</td>
+              <td>linux_64_mlflow_variantskinnypython3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantskinnypython3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_python3.9.____cpython</td>
+              <td>linux_64_mlflow_variantskinnypython3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_64_mlflow_variantskinnypython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_python3.6.____73_pypy</td>
+              <td>linux_aarch64_mlflow_variantdefaultpython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.6.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantdefaultpython3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_python3.6.____cpython</td>
+              <td>linux_aarch64_mlflow_variantdefaultpython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantdefaultpython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_python3.7.____cpython</td>
+              <td>linux_aarch64_mlflow_variantdefaultpython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantdefaultpython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_python3.8.____cpython</td>
+              <td>linux_aarch64_mlflow_variantdefaultpython3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_python3.9.____cpython</td>
+              <td>linux_aarch64_mlflow_variantdefaultpython3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.6.____73_pypy</td>
+              <td>linux_aarch64_mlflow_variantskinnypython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____73_pypy" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantskinnypython3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.6.____cpython</td>
+              <td>linux_aarch64_mlflow_variantskinnypython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantskinnypython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.7.____cpython</td>
+              <td>linux_aarch64_mlflow_variantskinnypython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantskinnypython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
+              <td>linux_aarch64_mlflow_variantskinnypython3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantskinnypython3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
+              <td>linux_aarch64_mlflow_variantskinnypython3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_aarch64_mlflow_variantskinnypython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_python3.8.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantdefaultpython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantdefaultpython3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_python3.9.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantdefaultpython3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantdefaultpython3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.6.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantdefaultpython3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_python3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantdefaultpython3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.7.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantdefaultpython3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_python3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.8.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.9.____cpython</td>
+              <td>linux_ppc64le_mlflow_variantskinnypython3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantskinnypython3.6.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mlflow_variantskinnypython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantskinnypython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mlflow_variantskinnypython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantskinnypython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mlflow_variantskinnypython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantskinnypython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_mlflow_variantskinnypython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_mlflow_variantskinnypython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantdefaultpython3.6.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantdefaultpython3.6.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantdefaultpython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantdefaultpython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantdefaultpython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantdefaultpython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantdefaultpython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantdefaultpython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantskinnypython3.6.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantskinnypython3.6.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantskinnypython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantskinnypython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantskinnypython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantskinnypython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantskinnypython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantskinnypython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_mlflow_variantskinnypython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_64_mlflow_variantskinnypython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mlflow_variantdefaultpython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mlflow_variantdefaultpython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mlflow_variantskinnypython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mlflow_variantskinnypython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_mlflow_variantskinnypython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_mlflow_variantskinnypython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantdefaultpython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantdefaultpython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantdefaultpython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantdefaultpython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantdefaultpython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantdefaultpython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantdefaultpython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantdefaultpython3.9.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantskinnypython3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantskinnypython3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantskinnypython3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantskinnypython3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantskinnypython3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantskinnypython3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_mlflow_variantskinnypython3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6553&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/mlflow-feedstock?branchName=master&jobName=win&configuration=win_64_mlflow_variantskinnypython3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -240,7 +422,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow-green.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--skinny-green.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--ui--dbg-green.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--ui--dbg--skinny-green.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) |
 
 Installing mlflow
 =================
@@ -251,10 +435,10 @@ Installing `mlflow` from the `conda-forge` channel can be achieved by adding `co
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `mlflow, mlflow-ui-dbg` can be installed with:
+Once the `conda-forge` channel has been enabled, `mlflow, mlflow-skinny, mlflow-ui-dbg, mlflow-ui-dbg-skinny` can be installed with:
 
 ```
-conda install mlflow mlflow-ui-dbg
+conda install mlflow mlflow-skinny mlflow-ui-dbg mlflow-ui-dbg-skinny
 ```
 
 It is possible to list all of the versions of `mlflow` available on your platform with:

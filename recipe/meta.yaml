@@ -1,8 +1,15 @@
 {% set name = "mlflow" %}
 {% set version = "1.14.0" %}
+{% if mlflow_variant == "skinny" %}
+{% set mlflow_suffix = "-skinny" %}
+{% set mlflow_other = "" %}
+{% else %}
+{% set mlflow_suffix = "" %}
+{% set mlflow_other = "-skinny" %}
+{% endif %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name|lower }}{{ mlflow_suffix }}
   version: {{ version }}
 
 source:
@@ -10,7 +17,7 @@ source:
   sha256: 14ffab7e7157912ceedcb9537faff647460502384973c5750703c21f184a1eff
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,42 +27,44 @@ requirements:
     - pip
     - python
   run:
-    - alembic <=1.4.1
+    - alembic <=1.4.1  # [mlflow_variant != "skinny"]
     - click >=7.0
     - cloudpickle
     - databricks-cli >=0.8.7
-    - docker-py >=4.0.0
+    - docker-py >=4.0.0  # [mlflow_variant != "skinny"]
     - entrypoints
-    - flask
+    - flask  # [mlflow_variant != "skinny"]
     - gitpython >=2.1.0
-    - gunicorn  # [not win]
-    - numpy
-    - pandas
-    - prometheus_flask_exporter
+    - gunicorn  # [not win and mlflow_variant != "skinny"]
+    - numpy  # [mlflow_variant != "skinny"]
+    - pandas  # [mlflow_variant != "skinny"]
+    - prometheus_flask_exporter  # [mlflow_variant != "skinny"]
     - protobuf >=3.6.0
     - python
     - pytz
     - pyyaml
-    - querystring_parser
+    - querystring_parser  # [mlflow_variant != "skinny"]
     - requests >=2.17.3
-    - sqlalchemy
-    - sqlparse >=0.3.1
-    - waitress  # [win]
+    - sqlalchemy  # [mlflow_variant != "skinny"]
+    - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
+    - waitress  # [win and mlflow_variant != "skinny"]
+  run_constrained:
+    - mlflow{{ mlflow_other }} <0a0
 
 test:
   imports:
     - mlflow
-    - mlflow.azureml
+    - mlflow.azureml  # [mlflow_variant != "skinny"]
     - mlflow.entities
-    - mlflow.models
+    - mlflow.models  # [mlflow_variant != "skinny"]
     - mlflow.projects
     - mlflow.protos
-    - mlflow.pyfunc
-    - mlflow.pytorch
+    - mlflow.pyfunc  # [mlflow_variant != "skinny"]
+    - mlflow.pytorch  # [mlflow_variant != "skinny"]
     - mlflow.rfunc
-    - mlflow.sagemaker
-    - mlflow.server
-    - mlflow.server.prometheus_exporter
+    - mlflow.sagemaker  # [mlflow_variant != "skinny"]
+    - mlflow.server  # [mlflow_variant != "skinny"]
+    - mlflow.server.prometheus_exporter  # [mlflow_variant != "skinny"]
     - mlflow.store
     - mlflow.tracking
     - mlflow.utils
@@ -66,7 +75,7 @@ test:
     - pip
 
 outputs:
-  - name: mlflow
+  - name: mlflow{{ mlflow_suffix }}
     version: {{ version }}
     files:
       - bin/mlflow*    # [unix]
@@ -75,7 +84,9 @@ outputs:
       - Scripts\mlflow*     # [win]
       - Lib\site-packages\mlflow      # [win]
       - Lib\site-packages\mlflow-*      # [win]
-  - name: mlflow-ui-dbg
+  - name: mlflow-ui-dbg{{ mlflow_suffix }}
+    build:
+      skip: true  # [mlflow_variant == "skinny"]
     version: {{ version }}
     requirements:
       # we need to use python in host to generate a unique build string
@@ -85,7 +96,7 @@ outputs:
         - python
       run:
         - python
-        - {{ pin_subpackage('mlflow', exact=True) }}
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: install_maps.bat  # [win]
     script: install_maps.sh  # [unix]
 
@@ -100,6 +111,7 @@ about:
   dev_url: https://github.com/mlflow/mlflow
 
 extra:
+  feedstock-name: mlflow
   recipe-maintainers:
     - aarondav
     - ahirreddy
