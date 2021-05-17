@@ -9,7 +9,7 @@ if [[ "${mlflow_variant}" == "skinny" ]]; then
 fi
 
 $PREFIX/bin/python -m pip install . --no-deps --ignore-installed -vv
-if [[ "${mlflow_variant}" != "skinny" ]]; then
+if [[ "$PKG_NAME" == "mlflow" ]]; then
   rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/css/*.css.map
   rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/js/*.js.map
 fi
