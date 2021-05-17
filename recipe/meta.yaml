@@ -24,6 +24,9 @@ outputs:
     script: build-mlflow.sh   # [unix]
     script: build-mlflow.bat  # [win]
     version: {{ version }}
+    build:
+      entry_points:
+        - "mlflow=mlflow.cli:cli"
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
@@ -73,8 +76,8 @@ outputs:
         - mlflow.tracking
         - mlflow.utils
       commands:
-        - mlflow --help  # [not win]
-        - pip check  # [not win]
+        - mlflow --help
+        - pip check
       requires:
         - pip
 
