@@ -83,11 +83,12 @@ outputs:
       skip: true  # [mlflow_variant == "skinny"]
     version: {{ version }}
     requirements:
-      # we need to use python in host to generate a unique build string
-      # otherwise the exact pin below means this package gets made only
-      # for one python version
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - python
+        - pip
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
         - python
