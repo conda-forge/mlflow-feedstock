@@ -57,6 +57,7 @@ outputs:
         - sqlalchemy  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
+        - importlib_metadata
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
