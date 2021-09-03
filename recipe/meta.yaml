@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.19.0" %}
+{% set version = "1.20.0" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 17da5648f67985f2f9417de91dce96e31028afc2a09a1b39b20d7a5f192ef853
+  sha256: d0bc2c52080d5909ec490a8ba47302e6f85d0fa0eb8f2d2441de8f79df2b5d67
 
 build:
   number: 0
@@ -57,6 +57,7 @@ outputs:
         - sqlalchemy  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
+        - importlib-metadata
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
