@@ -95,6 +95,7 @@ outputs:
       host:
         - python
         - pip
+        - openssl
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
         - python
