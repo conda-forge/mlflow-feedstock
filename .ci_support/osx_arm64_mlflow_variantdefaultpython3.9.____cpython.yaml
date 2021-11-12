@@ -1,13 +1,15 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 channel_sources:
-- conda-forge/label/rust_dev,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 macos_machine:
 - arm64-apple-darwin20.0.0
 mlflow_variant:
 - default
+openssl:
+- 1.1.1
 pin_run_as_build:
   python:
     min_pin: x.x
