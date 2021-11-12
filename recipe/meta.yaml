@@ -58,6 +58,7 @@ outputs:
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
         - importlib-metadata
+        - openssl
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
