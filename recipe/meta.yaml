@@ -35,7 +35,7 @@ outputs:
         - pip
         - python
       run:
-        - alembic <=1.4.1  # [mlflow_variant != "skinny"]
+        - alembic  # [mlflow_variant != "skinny"]
         - click >=7.0
         - cloudpickle
         - databricks-cli >=0.8.7
@@ -54,6 +54,7 @@ outputs:
         - pyyaml >=5.1
         - querystring_parser  # [mlflow_variant != "skinny"]
         - requests >=2.17.3
+        - scipy  # [mlflow_variant != "skinny"]
         - sqlalchemy  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
