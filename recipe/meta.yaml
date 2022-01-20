@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.22.0" %}
+{% set version = "1.23.0" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,10 +14,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f680390715e436ae38cf7056ec91030fc9eb67cc631226f28ff9504fbe395add
+  sha256: 66a1959a5d09bd5f2bd46ba53233c964973c2ef7e16bb4498f1bcc61bb3403c5
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
@@ -35,7 +35,7 @@ outputs:
         - pip
         - python
       run:
-        - alembic <=1.4.1  # [mlflow_variant != "skinny"]
+        - alembic  # [mlflow_variant != "skinny"]
         - click >=7.0
         - cloudpickle
         - databricks-cli >=0.8.7
@@ -54,6 +54,7 @@ outputs:
         - pyyaml >=5.1
         - querystring_parser  # [mlflow_variant != "skinny"]
         - requests >=2.17.3
+        - scipy  # [mlflow_variant != "skinny"]
         - sqlalchemy  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
@@ -95,6 +96,8 @@ outputs:
       host:
         - python
         - pip
+        # Prevent solver errors with pandas
+        - setuptools <60
         - openssl
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
