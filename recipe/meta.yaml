@@ -95,6 +95,8 @@ outputs:
       host:
         - python
         - pip
+        # Prevent solver errors with pandas
+        - setuptools <60
         - openssl
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
