@@ -35,7 +35,7 @@ outputs:
         - pip
         - python
       run:
-        - alembic <=1.4.1  # [mlflow_variant != "skinny"]
+        - alembic  # [mlflow_variant != "skinny"]
         - click >=7.0
         - cloudpickle
         - databricks-cli >=0.8.7
