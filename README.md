@@ -472,4 +472,5 @@ Feedstock Maintainers
 * [@tomasatdatabricks](https://github.com/tomasatdatabricks/)
 * [@xhochy](https://github.com/xhochy/)
 * [@zangr](https://github.com/zangr/)
+* [@harupy](https://github.com/harupy/)
 
