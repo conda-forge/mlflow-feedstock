@@ -27,6 +27,7 @@ outputs:
     build:
       entry_points:
         - mlflow=mlflow.cli:cli
+        - mlp=mlflow.pipelines.cli:commands
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
