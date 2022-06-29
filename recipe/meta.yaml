@@ -90,6 +90,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
+        - mlp --help
         - pip check
       requires:
         - pip
