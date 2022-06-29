@@ -48,14 +48,14 @@ outputs:
         - pandas  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter  # [mlflow_variant != "skinny"]
         - packaging
-        - protobuf >=3.7.0
+        - protobuf >=3.12.0
         - python
         - pytz
         - pyyaml >=5.1
         - querystring_parser  # [mlflow_variant != "skinny"]
         - requests >=2.17.3
         - scipy  # [mlflow_variant != "skinny"]
-        - sqlalchemy  # [mlflow_variant != "skinny"]
+        - sqlalchemy >=1.4.0  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
         - importlib-metadata
