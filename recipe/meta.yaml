@@ -63,8 +63,8 @@ outputs:
         - openssl
         # MLflow Pipelines dependencies
         - scikit-learn >=1.0.*  # [mlflow_variant != "skinny"]
-        - pyarrow >=7.0.*"  # [mlflow_variant != "skinny"]
-        - shap >=0.40.*"  # [mlflow_variant != "skinny"]
+        - pyarrow >=7.0.*  # [mlflow_variant != "skinny"]
+        - shap >=0.40.*  # [mlflow_variant != "skinny"]
         - pandas-profiling >=3.1.*  # [mlflow_variant != "skinny"]
         - ipython >=7.0.*  # [mlflow_variant != "skinny"]
         - markdown >=3.3.*  # [mlflow_variant != "skinny"]
