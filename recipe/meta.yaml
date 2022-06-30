@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.26.1" %}
+{% set version = "1.27.0" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 568044484958ea71bd314ed42026cfd95e641feebe18568a32ecbf9afe9b93d4
+  sha256: 6a1e34d6be266725e41d4547572a8425d86d6623e1c8888cf3f22b90019be0aa
 
 build:
   number: 0
@@ -27,6 +27,7 @@ outputs:
     build:
       entry_points:
         - mlflow=mlflow.cli:cli
+        - mlp=mlflow.pipelines.cli:commands
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
@@ -48,18 +49,29 @@ outputs:
         - pandas  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter  # [mlflow_variant != "skinny"]
         - packaging
-        - protobuf >=3.7.0
+        - protobuf >=3.12.0
         - python
         - pytz
         - pyyaml >=5.1
         - querystring_parser  # [mlflow_variant != "skinny"]
         - requests >=2.17.3
         - scipy  # [mlflow_variant != "skinny"]
-        - sqlalchemy  # [mlflow_variant != "skinny"]
+        - sqlalchemy >=1.4.0  # [mlflow_variant != "skinny"]
         - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
         - waitress  # [win and mlflow_variant != "skinny"]
         - importlib-metadata
         - openssl
+        # MLflow Pipelines dependencies
+        - scikit-learn >=1.0.*  # [mlflow_variant != "skinny"]
+        - pyarrow >=7.0.*  # [mlflow_variant != "skinny"]
+        - shap >=0.40.*  # [mlflow_variant != "skinny"]
+        # pandas-profiling version is not restricted to prevent the following jobs from failing:
+        # - linux linux_ppc64le_mlflow_variantdefaultpython3.10.____cpython
+        # - linux linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython
+        - pandas-profiling  # [mlflow_variant != "skinny"]
+        - ipython >=7.0.*  # [mlflow_variant != "skinny"]
+        - markdown >=3.3.*  # [mlflow_variant != "skinny"]
+        - Jinja2 >=3.0.*  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
@@ -81,6 +93,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
+        - mlp --help
         - pip check
       requires:
         - pip

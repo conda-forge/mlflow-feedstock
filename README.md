@@ -368,7 +368,6 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow-green.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow.svg)](https://anaconda.org/conda-forge/mlflow) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--skinny-green.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-skinny.svg)](https://anaconda.org/conda-forge/mlflow-skinny) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--ui--dbg-green.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-ui-dbg.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-mlflow--ui--dbg--skinny-green.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mlflow-ui-dbg-skinny.svg)](https://anaconda.org/conda-forge/mlflow-ui-dbg-skinny) |
 
 Installing mlflow
 =================
@@ -380,16 +379,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `mlflow, mlflow-skinny, mlflow-ui-dbg, mlflow-ui-dbg-skinny` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `mlflow, mlflow-skinny, mlflow-ui-dbg` can be installed with `conda`:
 
 ```
-conda install mlflow mlflow-skinny mlflow-ui-dbg mlflow-ui-dbg-skinny
+conda install mlflow mlflow-skinny mlflow-ui-dbg
 ```
 
 or with `mamba`:
 
 ```
-mamba install mlflow mlflow-skinny mlflow-ui-dbg mlflow-ui-dbg-skinny
+mamba install mlflow mlflow-skinny mlflow-ui-dbg
 ```
 
 It is possible to list all of the versions of `mlflow` available on your platform with `conda`:
