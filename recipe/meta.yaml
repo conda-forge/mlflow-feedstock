@@ -65,7 +65,7 @@ outputs:
         - scikit-learn >=1.0.*  # [mlflow_variant != "skinny"]
         - pyarrow >=7.0.*  # [mlflow_variant != "skinny"]
         - shap >=0.40.*  # [mlflow_variant != "skinny"]
-        # pandas-profiling version is unrestricted to prevent the following jobs from failing:
+        # pandas-profiling version is not restricted to prevent the following jobs from failing:
         # - linux linux_ppc64le_mlflow_variantdefaultpython3.10.____cpython
         # - linux linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython
         - pandas-profiling  # [mlflow_variant != "skinny"]
