@@ -132,6 +132,7 @@ about:
 extra:
   feedstock-name: mlflow
   recipe-maintainers:
+    - WeichenXu123
     - harupy
     - aarondav
     - ahirreddy
