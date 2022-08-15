@@ -58,7 +58,7 @@ outputs:
         - scipy <2  # [mlflow_variant != "skinny"]
         - sqlalchemy >=1.4.0,<2  # [mlflow_variant != "skinny"]
         - sqlparse >=0.4.0,<1
-        - waitress <3 # [win and mlflow_variant != "skinny"]
+        - waitress <3  # [win and mlflow_variant != "skinny"]
         - importlib-metadata <5,>=3.7.0,!=4.7.0
         - openssl
       run_constrained:
