@@ -76,6 +76,7 @@ jobs:
       displayName: conda-forge build setup
 
     - script: |
+        set 
         call activate base
         if EXIST LICENSE.txt (
           copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
