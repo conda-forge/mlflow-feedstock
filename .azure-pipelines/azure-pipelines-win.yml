@@ -75,6 +75,15 @@ jobs:
         run_conda_forge_build_setup
       displayName: conda-forge build setup
 
+    - task: PythonScript@0
+      displayName: 'test'
+      inputs:
+        scriptSource: inline
+        script: |
+          import os
+          print("x" * 100)
+          print(os.getenv("http_proxy"), os.getenv("https_proxy"))
+
     - script: |
         set 
         call activate base
