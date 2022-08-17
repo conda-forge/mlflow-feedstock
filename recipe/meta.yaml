@@ -92,6 +92,7 @@ outputs:
         - mlflow.tracking
         - mlflow.utils
       commands:
+        - set
         - mlflow --help
         - mlp --help
         - pip check
