@@ -84,6 +84,7 @@ outputs:
         - mlflow --help
         - mlp --help
         - pip check
+        - set  # [win]
       requires:
         - pip
 
