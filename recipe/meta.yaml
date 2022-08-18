@@ -16,7 +16,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 697669e1e42e887c330502ae4f0ed644e814be06acda90cea44539ecce334a64
   patches:
-    - 6492.patch
+    - 0001-Ignore-empty-proxies.patch
 
 build:
   number: 0
@@ -110,6 +110,34 @@ outputs:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
+
+  - name: mlflow-pipelines{{ mlflow_suffix }}
+    build:
+      skip: true  # [mlflow_variant == "skinny"]
+    version: {{ version }}
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python
+        - pip
+        # Prevent solver errors with pandas
+        - setuptools <60
+        - openssl
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
+      run:
+        - python
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
+        - scikit-learn >=1.0
+        - pyarrow >=7.0
+        - shap >=0.40
+        - pandas-profiling >=3.1
+        - ipython>=7.0
+        - markdown >=3.3
+        - jinja2 >=3.0
+    script: noop.bat  # [win]
+    script: noop.sh  # [unix]
 
 
 about:
