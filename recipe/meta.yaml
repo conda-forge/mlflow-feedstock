@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.27.0" %}
+{% set version = "1.28.0" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6a1e34d6be266725e41d4547572a8425d86d6623e1c8888cf3f22b90019be0aa
+  sha256: 697669e1e42e887c330502ae4f0ed644e814be06acda90cea44539ecce334a64
+  patches:
+    - 0001-Ignore-empty-proxies.patch
 
 build:
   number: 0
@@ -36,42 +38,31 @@ outputs:
         - pip
         - python
       run:
-        - alembic  # [mlflow_variant != "skinny"]
-        - click >=7.0
-        - cloudpickle
-        - databricks-cli >=0.8.7
-        - docker-py >=4.0.0  # [mlflow_variant != "skinny"]
-        - entrypoints
-        - flask  # [mlflow_variant != "skinny"]
-        - gitpython >=2.1.0
+        - alembic <2  # [mlflow_variant != "skinny"]
+        - click >=7.0,<9
+        - cloudpickle <3
+        - databricks-cli >=0.8.7,<1
+        - docker-py >=4.0.0,<6  # [mlflow_variant != "skinny"]
+        - entrypoints <1
+        - flask <3  # [mlflow_variant != "skinny"]
+        - gitpython >=2.1.0,<4
         - gunicorn  # [not win and mlflow_variant != "skinny"]
         - numpy  # [mlflow_variant != "skinny"]
-        - pandas  # [mlflow_variant != "skinny"]
-        - prometheus_flask_exporter  # [mlflow_variant != "skinny"]
-        - packaging
-        - protobuf >=3.12.0
+        - pandas <2  # [mlflow_variant != "skinny"]
+        - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
+        - packaging <22
+        - protobuf >=3.12.0,<5
         - python
-        - pytz
-        - pyyaml >=5.1
-        - querystring_parser  # [mlflow_variant != "skinny"]
-        - requests >=2.17.3
-        - scipy  # [mlflow_variant != "skinny"]
-        - sqlalchemy >=1.4.0  # [mlflow_variant != "skinny"]
-        - sqlparse >=0.3.1  # [mlflow_variant != "skinny"]
-        - waitress  # [win and mlflow_variant != "skinny"]
-        - importlib-metadata
+        - pytz <2023
+        - pyyaml >=5.1,<7
+        - querystring_parser <2  # [mlflow_variant != "skinny"]
+        - requests >=2.17.3,<3
+        - scipy <2  # [mlflow_variant != "skinny"]
+        - sqlalchemy >=1.4.0,<2  # [mlflow_variant != "skinny"]
+        - sqlparse >=0.4.0,<1
+        - waitress <3  # [win and mlflow_variant != "skinny"]
+        - importlib-metadata <5,>=3.7.0,!=4.7.0
         - openssl
-        # MLflow Pipelines dependencies
-        - scikit-learn >=1.0.*  # [mlflow_variant != "skinny"]
-        - pyarrow >=7.0.*  # [mlflow_variant != "skinny"]
-        - shap >=0.40.*  # [mlflow_variant != "skinny"]
-        # pandas-profiling version is not restricted to prevent the following jobs from failing:
-        # - linux linux_ppc64le_mlflow_variantdefaultpython3.10.____cpython
-        # - linux linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython
-        - pandas-profiling  # [mlflow_variant != "skinny"]
-        - ipython >=7.0.*  # [mlflow_variant != "skinny"]
-        - markdown >=3.3.*  # [mlflow_variant != "skinny"]
-        - Jinja2 >=3.0.*  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
@@ -95,6 +86,7 @@ outputs:
         - mlflow --help
         - mlp --help
         - pip check
+        - set  # [win]
       requires:
         - pip
 
@@ -118,6 +110,34 @@ outputs:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
+
+  - name: mlflow-pipelines{{ mlflow_suffix }}
+    build:
+      skip: true  # [mlflow_variant == "skinny"]
+    version: {{ version }}
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python
+        - pip
+        # Prevent solver errors with pandas
+        - setuptools <60
+        - openssl
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
+      run:
+        - python
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
+        - scikit-learn >=1.0
+        - pyarrow >=7.0
+        - shap >=0.40
+        - pandas-profiling >=3.1
+        - ipython>=7.0
+        - markdown >=3.3
+        - jinja2 >=3.0
+    script: noop.bat  # [win]
+    script: noop.sh  # [unix]
 
 
 about:
