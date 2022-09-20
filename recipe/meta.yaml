@@ -82,7 +82,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
-        - mlp --help
+        - mlp --help  # [mlflow_variant != "skinny"]
         - pip check
         - set  # [win]
       requires:
