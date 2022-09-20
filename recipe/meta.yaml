@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "1.28.0" %}
+{% set version = "1.29.0" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,9 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 697669e1e42e887c330502ae4f0ed644e814be06acda90cea44539ecce334a64
-  patches:
-    - 0001-Ignore-empty-proxies.patch
+  sha256: fad518600f515bc81cbf77053d506b769441229105b6a4bf8575feaa63a00da9
 
 build:
   number: 0
@@ -42,12 +40,12 @@ outputs:
         - click >=7.0,<9
         - cloudpickle <3
         - databricks-cli >=0.8.7,<1
-        - docker-py >=4.0.0,<6  # [mlflow_variant != "skinny"]
+        - docker-py >=4.0.0,<7  # [mlflow_variant != "skinny"]
         - entrypoints <1
         - flask <3  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
-        - gunicorn  # [not win and mlflow_variant != "skinny"]
-        - numpy  # [mlflow_variant != "skinny"]
+        - gunicorn <21  # [not win and mlflow_variant != "skinny"]
+        - numpy <2  # [mlflow_variant != "skinny"]
         - pandas <2  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
         - packaging <22
@@ -84,7 +82,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
-        - mlp --help
+        - mlp --help  # [mlflow_variant != "skinny"]
         - pip check
         - set  # [win]
       requires:
