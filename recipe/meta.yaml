@@ -15,8 +15,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fad518600f515bc81cbf77053d506b769441229105b6a4bf8575feaa63a00da9
-  patches:
-    - 0001-Ignore-empty-proxies.patch
 
 build:
   number: 0
