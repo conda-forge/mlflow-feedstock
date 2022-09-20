@@ -40,7 +40,7 @@ outputs:
         - click >=7.0,<9
         - cloudpickle <3
         - databricks-cli >=0.8.7,<1
-        - docker-py >=4.0.0,<6  # [mlflow_variant != "skinny"]
+        - docker-py >=4.0.0,<7  # [mlflow_variant != "skinny"]
         - entrypoints <1
         - flask <3  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
