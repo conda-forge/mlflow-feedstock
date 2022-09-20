@@ -44,8 +44,8 @@ outputs:
         - entrypoints <1
         - flask <3  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
-        - gunicorn  # [not win and mlflow_variant != "skinny"]
-        - numpy  # [mlflow_variant != "skinny"]
+        - gunicorn <21  # [not win and mlflow_variant != "skinny"]
+        - numpy <2  # [mlflow_variant != "skinny"]
         - pandas <2  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
         - packaging <22
