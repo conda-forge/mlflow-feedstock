@@ -27,7 +27,6 @@ outputs:
     build:
       entry_points:
         - mlflow=mlflow.cli:cli
-        - mlp=mlflow.pipelines.cli:commands
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
@@ -61,6 +60,13 @@ outputs:
         - waitress <3  # [win and mlflow_variant != "skinny"]
         - importlib-metadata <6,>=3.7.0,!=4.7.0
         - openssl
+        - scikit-learn <2  # [mlflow_variant != "skinny"]
+        - pyarrow <11,>=4.0.0  # [mlflow_variant != "skinny"]
+        - shap <1,>=0.40  # [mlflow_variant != "skinny"]
+        - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
+        - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
+        - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
+        - matplotlib <4  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
@@ -82,7 +88,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
-        - mlp --help  # [mlflow_variant != "skinny"]
+        - mlflow recipes --help  # [mlflow_variant != "skinny"]
         - pip check
         - set  # [win]
       requires:
@@ -108,34 +114,6 @@ outputs:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
-
-  - name: mlflow-pipelines{{ mlflow_suffix }}
-    build:
-      skip: true  # [mlflow_variant == "skinny"]
-    version: {{ version }}
-    requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-      host:
-        - python
-        - pip
-        # Prevent solver errors with pandas
-        - setuptools <60
-        - openssl
-        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
-      run:
-        - python
-        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
-        - scikit-learn >=1.0
-        - pyarrow >=7.0
-        - shap >=0.40
-        - pandas-profiling >=3.1
-        - ipython>=7.0
-        - markdown >=3.3
-        - jinja2 >=3.0
-    script: noop.bat  # [win]
-    script: noop.sh  # [unix]
 
 
 about:
