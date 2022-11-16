@@ -72,7 +72,6 @@ outputs:
     test:
       imports:
         - mlflow
-        - mlflow.azureml  # [mlflow_variant != "skinny"]
         - mlflow.entities
         - mlflow.models  # [mlflow_variant != "skinny"]
         - mlflow.projects
