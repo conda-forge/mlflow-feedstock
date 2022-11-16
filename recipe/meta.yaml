@@ -17,7 +17,7 @@ source:
   sha256: 7ce6caf3c6acb022d6f5ce8a0995a92be1db524ae16aade1f83da661cdf993de
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
@@ -66,7 +66,7 @@ outputs:
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
         - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
-        - matplotlib <4  # [mlflow_variant != "skinny"]
+        - matplotlib-base <4  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
