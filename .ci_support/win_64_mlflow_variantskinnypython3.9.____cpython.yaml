@@ -6,6 +6,7 @@ mlflow_variant:
 - skinny
 openssl:
 - 1.1.1
+- '3'
 pin_run_as_build:
   python:
     min_pin: x.x

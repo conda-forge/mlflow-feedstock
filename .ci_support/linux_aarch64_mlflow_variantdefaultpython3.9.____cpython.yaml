@@ -14,6 +14,7 @@ mlflow_variant:
 - default
 openssl:
 - 1.1.1
+- '3'
 pin_run_as_build:
   python:
     min_pin: x.x
