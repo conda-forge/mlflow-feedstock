@@ -47,7 +47,7 @@ outputs:
         - numpy <2  # [mlflow_variant != "skinny"]
         - pandas <2  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
-        - packaging <22
+        - packaging <23
         - protobuf >=3.12.0,<5
         - python
         - pytz <2023
