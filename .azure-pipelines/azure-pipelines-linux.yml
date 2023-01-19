@@ -12,8 +12,16 @@ jobs:
         CONFIG: linux_64_mlflow_variantdefaultpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mlflow_variantdefaultpython3.8.____73_pypy:
+        CONFIG: linux_64_mlflow_variantdefaultpython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mlflow_variantdefaultpython3.8.____cpython:
         CONFIG: linux_64_mlflow_variantdefaultpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mlflow_variantdefaultpython3.9.____73_pypy:
+        CONFIG: linux_64_mlflow_variantdefaultpython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mlflow_variantdefaultpython3.9.____cpython:
@@ -24,8 +32,16 @@ jobs:
         CONFIG: linux_64_mlflow_variantskinnypython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mlflow_variantskinnypython3.8.____73_pypy:
+        CONFIG: linux_64_mlflow_variantskinnypython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mlflow_variantskinnypython3.8.____cpython:
         CONFIG: linux_64_mlflow_variantskinnypython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_mlflow_variantskinnypython3.9.____73_pypy:
+        CONFIG: linux_64_mlflow_variantskinnypython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_mlflow_variantskinnypython3.9.____cpython:
@@ -36,8 +52,16 @@ jobs:
         CONFIG: linux_aarch64_mlflow_variantdefaultpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_aarch64_mlflow_variantdefaultpython3.8.____73_pypy:
+        CONFIG: linux_aarch64_mlflow_variantdefaultpython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_mlflow_variantdefaultpython3.8.____cpython:
         CONFIG: linux_aarch64_mlflow_variantdefaultpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_aarch64_mlflow_variantdefaultpython3.9.____73_pypy:
+        CONFIG: linux_aarch64_mlflow_variantdefaultpython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_mlflow_variantdefaultpython3.9.____cpython:
@@ -48,8 +72,16 @@ jobs:
         CONFIG: linux_aarch64_mlflow_variantskinnypython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_aarch64_mlflow_variantskinnypython3.8.____73_pypy:
+        CONFIG: linux_aarch64_mlflow_variantskinnypython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_mlflow_variantskinnypython3.8.____cpython:
         CONFIG: linux_aarch64_mlflow_variantskinnypython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_aarch64_mlflow_variantskinnypython3.9.____73_pypy:
+        CONFIG: linux_aarch64_mlflow_variantskinnypython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_mlflow_variantskinnypython3.9.____cpython:
@@ -60,8 +92,16 @@ jobs:
         CONFIG: linux_ppc64le_mlflow_variantdefaultpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_ppc64le_mlflow_variantdefaultpython3.8.____73_pypy:
+        CONFIG: linux_ppc64le_mlflow_variantdefaultpython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_mlflow_variantdefaultpython3.8.____cpython:
         CONFIG: linux_ppc64le_mlflow_variantdefaultpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_ppc64le_mlflow_variantdefaultpython3.9.____73_pypy:
+        CONFIG: linux_ppc64le_mlflow_variantdefaultpython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_mlflow_variantdefaultpython3.9.____cpython:
@@ -72,14 +112,23 @@ jobs:
         CONFIG: linux_ppc64le_mlflow_variantskinnypython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_ppc64le_mlflow_variantskinnypython3.8.____73_pypy:
+        CONFIG: linux_ppc64le_mlflow_variantskinnypython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_mlflow_variantskinnypython3.8.____cpython:
         CONFIG: linux_ppc64le_mlflow_variantskinnypython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_ppc64le_mlflow_variantskinnypython3.9.____73_pypy:
+        CONFIG: linux_ppc64le_mlflow_variantskinnypython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_mlflow_variantskinnypython3.9.____cpython:
         CONFIG: linux_ppc64le_mlflow_variantskinnypython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+    maxParallel: 27
   timeoutInMinutes: 360
 
   steps:
