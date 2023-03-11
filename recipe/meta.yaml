@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad7a2c4fa561fe0c852f296c2cd3739083825ac44c48d44358433abe397e306b
+  sha256: 85a19929292aafa08cc5c8d297c1d0e666ace775a59a414c5f67cb65967fe967
 
 build:
   number: 0
@@ -35,7 +35,7 @@ outputs:
         - pip
         - python
       run:
-        - alembic <2  # [mlflow_variant != "skinny"]
+        - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
         - click >=7.0,<9
         - cloudpickle <3
         - databricks-cli >=0.8.7,<1
@@ -45,9 +45,9 @@ outputs:
         - gitpython >=2.1.0,<4
         - gunicorn <21  # [not win and mlflow_variant != "skinny"]
         - numpy <2  # [mlflow_variant != "skinny"]
-        - pandas <2  # [mlflow_variant != "skinny"]
+        - pandas <3  # [mlflow_variant != "skinny"]
         - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
-        - packaging <23
+        - packaging <24
         - protobuf >=3.12.0,<5
         - python
         - pytz <2023
@@ -55,13 +55,13 @@ outputs:
         - querystring_parser <2  # [mlflow_variant != "skinny"]
         - requests >=2.17.3,<3
         - scipy <2  # [mlflow_variant != "skinny"]
-        - sqlalchemy >=1.4.0,<2  # [mlflow_variant != "skinny"]
+        - sqlalchemy >=1.4.0,<3  # [mlflow_variant != "skinny"]
         - sqlparse >=0.4.0,<1
         - waitress <3  # [win and mlflow_variant != "skinny"]
-        - importlib-metadata <6,>=3.7.0,!=4.7.0
+        - importlib-metadata <7,>=3.7.0,!=4.7.0
         - openssl
         - scikit-learn <2  # [mlflow_variant != "skinny"]
-        - pyarrow <11,>=4.0.0  # [mlflow_variant != "skinny"]
+        - pyarrow <12,>=4.0.0  # [mlflow_variant != "skinny"]
         - shap <1,>=0.40  # [mlflow_variant != "skinny"]
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
