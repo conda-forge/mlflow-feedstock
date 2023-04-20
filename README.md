@@ -413,21 +413,8 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@BenWilson2](https://github.com/BenWilson2/)
 * [@WeichenXu123](https://github.com/WeichenXu123/)
-* [@aarondav](https://github.com/aarondav/)
-* [@ahirreddy](https://github.com/ahirreddy/)
-* [@andrewmchen](https://github.com/andrewmchen/)
-* [@aveshcsingh](https://github.com/aveshcsingh/)
 * [@dbczumar](https://github.com/dbczumar/)
 * [@harupy](https://github.com/harupy/)
-* [@janjagusch](https://github.com/janjagusch/)
-* [@jaroslawk](https://github.com/jaroslawk/)
-* [@mateiz](https://github.com/mateiz/)
-* [@mparkhe](https://github.com/mparkhe/)
-* [@pogil](https://github.com/pogil/)
-* [@smurching](https://github.com/smurching/)
-* [@sueann](https://github.com/sueann/)
-* [@tomasatdatabricks](https://github.com/tomasatdatabricks/)
-* [@xhochy](https://github.com/xhochy/)
-* [@zangr](https://github.com/zangr/)
 
