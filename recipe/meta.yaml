@@ -17,7 +17,7 @@ source:
   sha256: 2a7ba60a2c790c7ea742f486838706d586fab701fec308ea4c732f4bbadd8409
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
@@ -50,7 +50,7 @@ outputs:
         - packaging <24
         - protobuf >=3.12.0,<5
         - python
-        - pytz <2023
+        - pytz <2024
         - pyyaml >=5.1,<7
         - querystring_parser <2  # [mlflow_variant != "skinny"]
         - requests >=2.17.3,<3
@@ -62,7 +62,6 @@ outputs:
         - openssl
         - scikit-learn <2  # [mlflow_variant != "skinny"]
         - pyarrow <12,>=4.0.0  # [mlflow_variant != "skinny"]
-        - shap <1,>=0.40  # [mlflow_variant != "skinny"]
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
         - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
@@ -130,18 +129,7 @@ extra:
     - BenWilson2
     - WeichenXu123
     - harupy
-    - aarondav
-    - ahirreddy
-    - andrewmchen
-    - aveshcsingh
     - dbczumar
     - jaroslawk
-    - mateiz
-    - mparkhe
-    - pogil
-    - smurching
-    - sueann
-    - tomasatdatabricks
     - xhochy
-    - zangr
     - janjagusch
