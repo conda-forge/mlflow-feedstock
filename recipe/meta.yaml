@@ -126,6 +126,7 @@ about:
 extra:
   feedstock-name: mlflow
   recipe-maintainers:
+    - serena-ruan
     - BenWilson2
     - WeichenXu123
     - harupy
