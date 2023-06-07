@@ -61,7 +61,7 @@ outputs:
         - importlib-metadata <7,>=3.7.0,!=4.7.0
         - openssl
         - scikit-learn <2  # [mlflow_variant != "skinny"]
-        - pyarrow <12,>=4.0.0  # [mlflow_variant != "skinny"]
+        - pyarrow <13,>=4.0.0  # [mlflow_variant != "skinny"]
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
         - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
