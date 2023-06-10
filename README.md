@@ -503,5 +503,6 @@ Feedstock Maintainers
 * [@harupy](https://github.com/harupy/)
 * [@janjagusch](https://github.com/janjagusch/)
 * [@jaroslawk](https://github.com/jaroslawk/)
+* [@serena-ruan](https://github.com/serena-ruan/)
 * [@xhochy](https://github.com/xhochy/)
 
