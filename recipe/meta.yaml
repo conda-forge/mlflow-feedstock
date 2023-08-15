@@ -35,51 +35,62 @@ outputs:
         - pip
         - python
       run:
-        - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
+        # https://github.com/mlflow/mlflow/blob/master/requirements/skinny-requirements.txt
         - click >=7.0,<9
         - cloudpickle <3
         - databricks-cli >=0.8.7,<1
-        - docker-py >=4.0.0,<7  # [mlflow_variant != "skinny"]
         - entrypoints <1
-        - flask <3  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
-        - gunicorn <22  # [not win and mlflow_variant != "skinny"]
-        - numpy <2  # [mlflow_variant != "skinny"]
-        - pandas <3  # [mlflow_variant != "skinny"]
-        - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
         - packaging <24
         - protobuf >=3.12.0,<5
         - python
         - pytz <2024
         - pyyaml >=5.1,<7
-        - querystring_parser <2  # [mlflow_variant != "skinny"]
-        - requests >=2.17.3,<3
-        - scipy <2  # [mlflow_variant != "skinny"]
-        - sqlalchemy >=1.4.0,<3  # [mlflow_variant != "skinny"]
         - sqlparse >=0.4.0,<1
-        - waitress <3  # [win and mlflow_variant != "skinny"]
+        - requests >=2.17.3,<3
         - importlib-metadata <7,>=3.7.0,!=4.7.0
         - openssl
-        - scikit-learn <2  # [mlflow_variant != "skinny"]
-        - pyarrow <13,>=4.0.0  # [mlflow_variant != "skinny"]
-        - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
-        - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
-        - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
-        - matplotlib-base <4  # [mlflow_variant != "skinny"]
+
+        - alembic <2,!=1.10             # [mlflow_variant != "skinny"]
+        - docker-py >=4.0.0,<7          # [mlflow_variant != "skinny"]
+        - flask <3                      # [mlflow_variant != "skinny"]
+        - gunicorn <22                  # [mlflow_variant != "skinny" and not win]
+        - jinja2 <4,>=3.0               # [mlflow_variant != "skinny" and win]
+        - jinja2 <4,>=2.11              # [mlflow_variant != "skinny" and not win]
+        - markdown <4,>=3.3             # [mlflow_variant != "skinny"]
+        - matplotlib-base <4            # [mlflow_variant != "skinny"]
+        - numpy <2                      # [mlflow_variant != "skinny"]
+        - pandas <3                     # [mlflow_variant != "skinny"]
+        - prometheus_flask_exporter <1  # [mlflow_variant != "skinny"]
+        - pyarrow <13,>=4.0.0           # [mlflow_variant != "skinny"]
+        - querystring_parser <2         # [mlflow_variant != "skinny"]
+        - scikit-learn <2               # [mlflow_variant != "skinny"]
+        - scipy <2                      # [mlflow_variant != "skinny"]
+        - sqlalchemy >=1.4.0,<3         # [mlflow_variant != "skinny"]
+        - waitress <3                   # [mlflow_variant != "skinny" and win]
+
+        # https://github.com/mlflow/mlflow/blob/master/requirements/gateway-requirements.txt
+        - pydantic >=1.0,<2            # [mlflow_variant != "skinny"]
+        - fastapi <1                   # [mlflow_variant != "skinny"]
+        - uvicorn <1                   # [mlflow_variant != "skinny"]
+        - watchfiles <1                # [mlflow_variant != "skinny"]
+        - psutil <6                    # [mlflow_variant != "skinny"]
+        - aiohttp <4                   # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
       imports:
         - mlflow
         - mlflow.entities
-        - mlflow.models  # [mlflow_variant != "skinny"]
+        - mlflow.gateway                     # [mlflow_variant != "skinny"]
+        - mlflow.models                      # [mlflow_variant != "skinny"]
         - mlflow.projects
         - mlflow.protos
-        - mlflow.pyfunc  # [mlflow_variant != "skinny"]
-        - mlflow.pytorch  # [mlflow_variant != "skinny"]
+        - mlflow.pyfunc                      # [mlflow_variant != "skinny"]
+        - mlflow.pytorch                     # [mlflow_variant != "skinny"]
         - mlflow.rfunc
-        - mlflow.sagemaker  # [mlflow_variant != "skinny"]
-        - mlflow.server  # [mlflow_variant != "skinny"]
+        - mlflow.sagemaker                   # [mlflow_variant != "skinny"]
+        - mlflow.server                      # [mlflow_variant != "skinny"]
         - mlflow.server.prometheus_exporter  # [mlflow_variant != "skinny"]
         - mlflow.store
         - mlflow.tracking
