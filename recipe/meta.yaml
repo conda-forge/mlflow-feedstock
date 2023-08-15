@@ -70,12 +70,12 @@ outputs:
         - waitress <3                   # [mlflow_variant != "skinny" and win]
 
         # https://github.com/mlflow/mlflow/blob/master/requirements/gateway-requirements.txt
-        - pydantic >=1.0,<2            # [mlflow_variant != "skinny"]
-        - fastapi <1                   # [mlflow_variant != "skinny"]
-        - uvicorn <1                   # [mlflow_variant != "skinny"]
-        - watchfiles <1                # [mlflow_variant != "skinny"]
-        - psutil <6                    # [mlflow_variant != "skinny"]
-        - aiohttp <4                   # [mlflow_variant != "skinny"]
+        - pydantic >=1.0,<2             # [mlflow_variant != "skinny"]
+        - fastapi <1                    # [mlflow_variant != "skinny"]
+        - uvicorn <1                    # [mlflow_variant != "skinny"]
+        - watchfiles <1                 # [mlflow_variant != "skinny"]
+        - psutil <6                     # [mlflow_variant != "skinny"]
+        - aiohttp <4                    # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
     test:
