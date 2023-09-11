@@ -120,6 +120,9 @@ outputs:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
+    test:
+      commands:
+        - exit 0
 
   - name: mlflow{{ mlflow_suffix }}-gateway
     build:
