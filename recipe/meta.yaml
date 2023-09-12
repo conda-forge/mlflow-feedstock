@@ -17,7 +17,7 @@ source:
   sha256: fd569232e65d69c0cb7006847b1a1bd80831bf0e19378052a44ee5c0ae349182
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
@@ -68,6 +68,14 @@ outputs:
         - matplotlib-base <4  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
+        # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
+        # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
+        - pydantic >=1.0,<2
+        - fastapi <1
+        - uvicorn-standard <1
+        - watchfiles <1
+        - psutil <6
+        - aiohttp <4
     test:
       imports:
         - mlflow
@@ -112,7 +120,27 @@ outputs:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
+    test:
+      commands:
+        - exit 0
 
+  - name: mlflow{{ mlflow_suffix }}-gateway
+    build:
+      noarch: python
+      # Skip this package for cross-builds. We will only need a single upload anyways
+      skip: true  # [not linux64]
+    requirements:
+      run:
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, max_pin='x.x.x') }}
+        - pydantic >=1.0,<2
+        - fastapi <1
+        - uvicorn-standard <1
+        - watchfiles <1
+        - psutil <6
+        - aiohttp <4
+    test:
+      imports:
+        - mlflow.gateway
 
 about:
   home: https://mlflow.org/
