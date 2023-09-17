@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.7.0" %}
+{% set version = "2.7.1" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: deaf0f5f27608e9526d69fffcca70c822ac90ea290a6f3e4bb3dfa1b209b0111
+  sha256: 853b2038496fb8f85cad205943dede877f65ab86e856f296587885dafcef643d
 
 build:
   number: 0
