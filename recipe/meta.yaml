@@ -17,7 +17,7 @@ source:
   sha256: 853b2038496fb8f85cad205943dede877f65ab86e856f296587885dafcef643d
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
@@ -70,7 +70,7 @@ outputs:
         - mlflow{{ mlflow_other }} <0a0
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
-        - pydantic >=1.0,<2
+        - pydantic
         - fastapi <1
         - uvicorn-standard <1
         - watchfiles <1
