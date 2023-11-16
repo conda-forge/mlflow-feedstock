@@ -8,7 +8,7 @@ if [[ "${mlflow_variant}" == "skinny" ]]; then
   cp ${RECIPE_DIR}/README_SKINNY.rst ${SRC_DIR}
 fi
 
-$PREFIX/bin/python -m pip install . --no-deps --ignore-installed -vv
+$PREFIX/bin/python -m pip install . --no-deps --ignore-installed --no-build-isolation -vv
 if [[ "$PKG_NAME" == "mlflow" ]]; then
   rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/css/*.css.map
   rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/js/*.js.map
