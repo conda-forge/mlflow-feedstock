@@ -34,6 +34,7 @@ outputs:
       host:
         - pip
         - python
+        - setuptools <60
       run:
         - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
         - click >=7.0,<9
@@ -134,12 +135,13 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('mlflow' + mlflow_suffix, max_pin='x.x.x') }}
-        - pydantic >=1.0,<2
+        - pydantic >=1.0,<3
         - fastapi <1
         - uvicorn-standard <1
         - watchfiles <1
         - psutil <6
         - aiohttp <4
+        - boto3 >=1.28.56,<2
     test:
       imports:
         - mlflow.gateway
