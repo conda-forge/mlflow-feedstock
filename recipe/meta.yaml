@@ -34,7 +34,8 @@ outputs:
       host:
         - pip
         - python
-        - setuptools <60
+        - setuptools
+        - openssl
       run:
         - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
         - click >=7.0,<9
@@ -115,7 +116,7 @@ outputs:
         - python
         - pip
         # Prevent solver errors with pandas
-        - setuptools <60
+        - setuptools
         - openssl
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
@@ -133,8 +134,16 @@ outputs:
       # Skip this package for cross-builds. We will only need a single upload anyways
       skip: true  # [not linux64]
     requirements:
+      host:
+        - python
+        - pip
+        # Prevent solver errors with pandas
+        - setuptools
+        - openssl
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
-        - {{ pin_subpackage('mlflow' + mlflow_suffix, max_pin='x.x.x') }}
+        - python
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
         - pydantic >=1.0,<3
         - fastapi <1
         - uvicorn-standard <1
