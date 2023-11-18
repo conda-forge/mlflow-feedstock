@@ -4,8 +4,6 @@ channel_targets:
 - conda-forge main
 mlflow_variant:
 - default
-openssl:
-- '3'
 pin_run_as_build:
   python:
     min_pin: x.x

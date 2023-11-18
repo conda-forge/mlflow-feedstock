@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.8.0" %}
+{% set version = "2.8.1" %}
 {% if mlflow_variant == "skinny" %}
 {% set mlflow_suffix = "-skinny" %}
 {% set mlflow_other = "" %}
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 75bdc7768ba950aa5c98dd4792a74ec372a4ac2b86d714ee565af18ebede4524
+  sha256: e4e5bdd2d9efb0b386ecbce2df7e43f04c46a32080208414dc53b5fd71559678
 
 build:
   number: 0
@@ -34,6 +34,7 @@ outputs:
       host:
         - pip
         - python
+        - setuptools
       run:
         - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
         - click >=7.0,<9
@@ -41,7 +42,7 @@ outputs:
         - databricks-cli >=0.8.7,<1
         - docker-py >=4.0.0,<7  # [mlflow_variant != "skinny"]
         - entrypoints <1
-        - flask <3  # [mlflow_variant != "skinny"]
+        - flask <4  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
         - gunicorn <22  # [not win and mlflow_variant != "skinny"]
         - numpy <2  # [mlflow_variant != "skinny"]
@@ -59,24 +60,22 @@ outputs:
         - sqlparse >=0.4.0,<1
         - waitress <3  # [win and mlflow_variant != "skinny"]
         - importlib-metadata <7,>=3.7.0,!=4.7.0
-        - openssl
         - scikit-learn <2  # [mlflow_variant != "skinny"]
-        - pyarrow <14,>=4.0.0  # [mlflow_variant != "skinny"]
+        - pyarrow <15,>=4.0.0  # [mlflow_variant != "skinny"]
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
         - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
         - matplotlib-base <4  # [mlflow_variant != "skinny"]
-        - psutil <6  # [mlflow_variant != "skinny"]
       run_constrained:
         - mlflow{{ mlflow_other }} <0a0
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
-        - pydantic >=1.0
+        - pydantic >=1.0,<3
         - fastapi <1
         - uvicorn-standard <1
         - watchfiles <1
-        - psutil <6
         - aiohttp <4
+        - boto3 >=1.28.56,<2
     test:
       imports:
         - mlflow
@@ -113,8 +112,7 @@ outputs:
         - python
         - pip
         # Prevent solver errors with pandas
-        - setuptools <60
-        - openssl
+        - setuptools
         - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
         - python
@@ -131,14 +129,21 @@ outputs:
       # Skip this package for cross-builds. We will only need a single upload anyways
       skip: true  # [not linux64]
     requirements:
+      host:
+        - python
+        - pip
+        # Prevent solver errors with pandas
+        - setuptools
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
       run:
-        - {{ pin_subpackage('mlflow' + mlflow_suffix, max_pin='x.x.x') }}
-        - pydantic >=1.0,<2
+        - python
+        - {{ pin_subpackage('mlflow' + mlflow_suffix, exact=True) }}
+        - pydantic >=1.0,<3
         - fastapi <1
         - uvicorn-standard <1
         - watchfiles <1
-        - psutil <6
         - aiohttp <4
+        - boto3 >=1.28.56,<2
     test:
       imports:
         - mlflow.gateway
