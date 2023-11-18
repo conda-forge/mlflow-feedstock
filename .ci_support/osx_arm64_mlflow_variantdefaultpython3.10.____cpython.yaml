@@ -8,8 +8,6 @@ macos_machine:
 - arm64-apple-darwin20.0.0
 mlflow_variant:
 - default
-openssl:
-- '3'
 pin_run_as_build:
   python:
     min_pin: x.x
