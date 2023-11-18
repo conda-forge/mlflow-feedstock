@@ -17,7 +17,7 @@ source:
   sha256: 75bdc7768ba950aa5c98dd4792a74ec372a4ac2b86d714ee565af18ebede4524
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow{{ mlflow_suffix }}
