@@ -14,8 +14,14 @@ jobs:
       osx_64_mlflow_variantdefaultpython3.11.____cpython:
         CONFIG: osx_64_mlflow_variantdefaultpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_mlflow_variantdefaultpython3.8.____73_pypy:
+        CONFIG: osx_64_mlflow_variantdefaultpython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
       osx_64_mlflow_variantdefaultpython3.8.____cpython:
         CONFIG: osx_64_mlflow_variantdefaultpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_mlflow_variantdefaultpython3.9.____73_pypy:
+        CONFIG: osx_64_mlflow_variantdefaultpython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
       osx_64_mlflow_variantdefaultpython3.9.____cpython:
         CONFIG: osx_64_mlflow_variantdefaultpython3.9.____cpython
@@ -26,8 +32,14 @@ jobs:
       osx_64_mlflow_variantskinnypython3.11.____cpython:
         CONFIG: osx_64_mlflow_variantskinnypython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_64_mlflow_variantskinnypython3.8.____73_pypy:
+        CONFIG: osx_64_mlflow_variantskinnypython3.8.____73_pypy
+        UPLOAD_PACKAGES: 'True'
       osx_64_mlflow_variantskinnypython3.8.____cpython:
         CONFIG: osx_64_mlflow_variantskinnypython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_64_mlflow_variantskinnypython3.9.____73_pypy:
+        CONFIG: osx_64_mlflow_variantskinnypython3.9.____73_pypy
         UPLOAD_PACKAGES: 'True'
       osx_64_mlflow_variantskinnypython3.9.____cpython:
         CONFIG: osx_64_mlflow_variantskinnypython3.9.____cpython
@@ -56,6 +68,7 @@ jobs:
       osx_arm64_mlflow_variantskinnypython3.9.____cpython:
         CONFIG: osx_arm64_mlflow_variantskinnypython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
+    maxParallel: 15
   timeoutInMinutes: 360
 
   steps:
