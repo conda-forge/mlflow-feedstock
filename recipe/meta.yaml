@@ -40,7 +40,7 @@ outputs:
         - click >=7.0,<9
         - cloudpickle <4
         - databricks-cli >=0.8.7,<1
-        - docker-py >=4.0.0,<7  # [mlflow_variant != "skinny"]
+        - docker-py >=4.0.0,<8  # [mlflow_variant != "skinny"]
         - entrypoints <1
         - flask <4  # [mlflow_variant != "skinny"]
         - gitpython >=2.1.0,<4
@@ -61,7 +61,7 @@ outputs:
         - waitress <3  # [win and mlflow_variant != "skinny"]
         - importlib-metadata <8,>=3.7.0,!=4.7.0
         - scikit-learn <2  # [mlflow_variant != "skinny"]
-        - pyarrow <15,>=4.0.0  # [mlflow_variant != "skinny"]
+        - pyarrow <16,>=4.0.0  # [mlflow_variant != "skinny"]
         - markdown <4,>=3.3  # [mlflow_variant != "skinny"]
         - jinja2 <4,>=3.0  # [win and mlflow_variant != "skinny"]
         - jinja2 <4,>=2.11  # [not win and mlflow_variant != "skinny"]
