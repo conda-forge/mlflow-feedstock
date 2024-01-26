@@ -160,6 +160,7 @@ about:
 extra:
   feedstock-name: mlflow
   recipe-maintainers:
+    - daniellok-db
     - B-Step62
     - serena-ruan
     - BenWilson2
