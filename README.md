@@ -499,8 +499,10 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@B-Step62](https://github.com/B-Step62/)
 * [@BenWilson2](https://github.com/BenWilson2/)
 * [@WeichenXu123](https://github.com/WeichenXu123/)
+* [@daniellok-db](https://github.com/daniellok-db/)
 * [@dbczumar](https://github.com/dbczumar/)
 * [@harupy](https://github.com/harupy/)
 * [@janjagusch](https://github.com/janjagusch/)
