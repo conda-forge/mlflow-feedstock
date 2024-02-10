@@ -39,7 +39,6 @@ outputs:
         - alembic <2,!=1.10  # [mlflow_variant != "skinny"]
         - click >=7.0,<9
         - cloudpickle <4
-        - databricks-cli >=0.8.7,<1
         - docker-py >=4.0.0,<8  # [mlflow_variant != "skinny"]
         - entrypoints <1
         - flask <4  # [mlflow_variant != "skinny"]
