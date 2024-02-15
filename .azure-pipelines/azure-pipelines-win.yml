@@ -8,29 +8,17 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_mlflow_variantdefaultpython3.10.____cpython:
-        CONFIG: win_64_mlflow_variantdefaultpython3.10.____cpython
+      win_64_python3.10.____cpython:
+        CONFIG: win_64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantdefaultpython3.11.____cpython:
-        CONFIG: win_64_mlflow_variantdefaultpython3.11.____cpython
+      win_64_python3.11.____cpython:
+        CONFIG: win_64_python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantdefaultpython3.8.____cpython:
-        CONFIG: win_64_mlflow_variantdefaultpython3.8.____cpython
+      win_64_python3.8.____cpython:
+        CONFIG: win_64_python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantdefaultpython3.9.____cpython:
-        CONFIG: win_64_mlflow_variantdefaultpython3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantskinnypython3.10.____cpython:
-        CONFIG: win_64_mlflow_variantskinnypython3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantskinnypython3.11.____cpython:
-        CONFIG: win_64_mlflow_variantskinnypython3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantskinnypython3.8.____cpython:
-        CONFIG: win_64_mlflow_variantskinnypython3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_mlflow_variantskinnypython3.9.____cpython:
-        CONFIG: win_64_mlflow_variantskinnypython3.9.____cpython
+      win_64_python3.9.____cpython:
+        CONFIG: win_64_python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
