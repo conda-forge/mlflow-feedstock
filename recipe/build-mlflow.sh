@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-if [[ "${mlflow_variant}" == "skinny" ]]; then
+if [[ "${PKG_NAME}" == "mlflow-skinny" ]]; then
   export MLFLOW_SKINNY=1
   # https://github.com/mlflow/mlflow/pull/4134
   cp ${RECIPE_DIR}/README_SKINNY.rst ${SRC_DIR}
