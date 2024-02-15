@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3ddf32ba2c01dac79e4d077d4bb9ed46d82a082dc99223207d562c7ee6bee671
+  patches:
+    - 0001-Don-t-install-pylint_plugins.patch
 
 build:
   number: 1
@@ -117,6 +119,8 @@ outputs:
       commands:
         - mlflow --help
         - mlflow recipes --help
+        # This should not be packaged
+        - test ! -f $SP_DIR/pylint_plugins  # [unix]
         - pip check
         - set  # [win]
       requires:
