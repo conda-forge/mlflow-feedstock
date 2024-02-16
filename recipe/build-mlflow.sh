@@ -10,6 +10,6 @@ fi
 
 $PREFIX/bin/python -m pip install . --no-deps --ignore-installed --no-build-isolation -vv
 if [[ "$PKG_NAME" != "mlflow-ui-dbg" ]]; then
-  rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/css/*.css.map
-  rm $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/js/*.js.map
+  rm -f $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/css/*.css.map
+  rm -f $PREFIX/lib/python${PY_VER}/site-packages/mlflow/server/js/build/static/js/*.js.map
 fi

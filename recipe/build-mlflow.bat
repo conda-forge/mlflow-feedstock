@@ -9,6 +9,6 @@ if [%PKG_NAME%] == [mlflow-skinny] (
 %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
 
 if [%PKG_NAME%] NEQ [mlflow-ui-dbg] (
-  bash -c 'rm ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/css/*.css.map'
-  bash -c 'rm ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/js/*.js.map'
+  bash -c 'rm -f ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/css/*.css.map'
+  bash -c 'rm -f ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/js/*.js.map'
 )
