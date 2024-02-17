@@ -12,7 +12,7 @@ source:
     - 0001-Don-t-install-pylint_plugins.patch
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: mlflow-skinny
@@ -80,9 +80,9 @@ outputs:
         - pip
         - python
         - setuptools
-        - {{ pin_subpackage('mlflow-skinny', exact=True) }}
+        - {{ pin_subpackage('mlflow-ui', exact=True) }}
       run:
-        - {{ pin_subpackage('mlflow-skinny', exact=True) }}
+        - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
         - flask <4
@@ -192,6 +192,32 @@ outputs:
     test:
       imports:
         - mlflow.gateway
+
+
+  - name: mlflow-ui
+    version: {{ version }}
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python
+        - pip
+        - setuptools
+        - {{ pin_subpackage('mlflow-skinny', exact=True) }}
+      run:
+        - python
+        - {{ pin_subpackage('mlflow-skinny', exact=True) }}
+        - flask <4
+        - gunicorn <22  # [not win]
+        - waitress <3  # [win]
+        - querystring_parser <2
+    script: build-mlflow.bat  # [win]
+    script: build-mlflow.sh  # [unix]
+    test:
+      commands:
+        - mlflow --help
+
 
 about:
   home: https://mlflow.org/
