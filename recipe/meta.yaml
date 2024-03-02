@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.10.2" %}
+{% set version = "2.11.0" %}
 
 package:
   name: mlflow-split
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3ddf32ba2c01dac79e4d077d4bb9ed46d82a082dc99223207d562c7ee6bee671
+  sha256: 5fc6046a94e4269564dbeb748bb791ccb5c671a9c5c2b91ef3713c16aa614595
   patches:
     - 0001-Don-t-install-pylint_plugins.patch
 
 build:
-  number: 2
+  number: 0
 
 outputs:
   - name: mlflow-skinny
