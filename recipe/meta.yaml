@@ -98,6 +98,7 @@ outputs:
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
         - matplotlib-base <4
+        - graphene<4
     test:
       imports:
         - mlflow
