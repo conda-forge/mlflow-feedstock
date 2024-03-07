@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 5fc6046a94e4269564dbeb748bb791ccb5c671a9c5c2b91ef3713c16aa614595
-  patches:
-    - 0001-Don-t-install-pylint_plugins.patch
 
 build:
   number: 0
