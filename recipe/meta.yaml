@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.10.2" %}
+{% set version = "2.11.0" %}
 
 package:
   name: mlflow-split
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3ddf32ba2c01dac79e4d077d4bb9ed46d82a082dc99223207d562c7ee6bee671
-  patches:
-    - 0001-Don-t-install-pylint_plugins.patch
+  sha256: 5fc6046a94e4269564dbeb748bb791ccb5c671a9c5c2b91ef3713c16aa614595
 
 build:
-  number: 2
+  number: 0
 
 outputs:
   - name: mlflow-skinny
@@ -38,7 +36,7 @@ outputs:
         - packaging <24
         - protobuf >=3.12.0,<5
         - python
-        - pytz <2024
+        - pytz <2025
         - pyyaml >=5.1,<7
         - requests >=2.17.3,<3
         - sqlparse >=0.4.0,<1
@@ -93,13 +91,14 @@ outputs:
         - querystring_parser <2
         - scipy <2
         - sqlalchemy >=1.4.0,<3
-        - waitress <3  # [win]
+        - waitress <4  # [win]
         - scikit-learn <2
         - pyarrow <16,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
         - matplotlib-base <4
+        - graphene<4
     test:
       imports:
         - mlflow
