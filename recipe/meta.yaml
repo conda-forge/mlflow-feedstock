@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.11.2" %}
+{% set version = "2.11.3" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8d29c0a57ec9c8aceede5d47df8ca3741ee0808eb0723840f57b83556a623434
+  sha256: 621b7e311e890b79719c2e7777286d8e08d38dd04d5ab080966990bd4a55febb
 
 build:
   number: 0
