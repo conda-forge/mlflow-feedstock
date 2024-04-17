@@ -33,8 +33,8 @@ outputs:
         - cloudpickle <4
         - entrypoints <1
         - gitpython >=2.1.0,<4
-        - packaging <24
-        - protobuf >=3.12.0,<5
+        - packaging <25
+        - protobuf >=3.12.0,<6
         - python
         - pytz <2025
         - pyyaml >=5.1,<7
