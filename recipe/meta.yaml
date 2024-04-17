@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa92aebb2379a9c5484cbe901cdf779d5408ac96a641e4b1f8a2d1ff974db7c9
+  url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
+  sha256: d270f6503c8e0087c6f31cbe6fef2766d89fff71ff1ff03b1c5858554e279c62
 
 build:
   number: 0
