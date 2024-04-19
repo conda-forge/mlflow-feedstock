@@ -10,7 +10,7 @@ source:
   sha256: d270f6503c8e0087c6f31cbe6fef2766d89fff71ff1ff03b1c5858554e279c62
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
@@ -62,6 +62,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
+        - pip list | grep "mlflow-skinny \+${PKG_VERSION}"  # [unix]
         - pip check
         - set  # [win]
       requires:
@@ -121,6 +122,7 @@ outputs:
         # This should not be packaged
         - test ! -f $SP_DIR/pylint_plugins  # [unix]
         - pip check
+        - pip list | grep "mlflow \+${PKG_VERSION}"  # [unix]
         - set  # [win]
       requires:
         - pip
