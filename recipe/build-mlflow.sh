@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-if [ ! -f pyproject-full.toml ]; then
+if [ ! -f pyproject.full.toml ]; then
   cp pyproject.toml pyproject.full.toml
 fi
 
