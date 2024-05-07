@@ -11,6 +11,11 @@ if [[ "${PKG_NAME}" == "mlflow-skinny" ]]; then
   # https://github.com/mlflow/mlflow/pull/4134
   cp ${RECIPE_DIR}/README_SKINNY.rst ${SRC_DIR}
   cp pyproject.skinny.toml pyproject.toml
+
+  pushd mlflow/server/js
+  yarn install
+  yarn build
+  popd
 else
   cp pyproject.full.toml pyproject.toml
 fi

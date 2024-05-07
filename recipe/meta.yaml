@@ -28,6 +28,7 @@ outputs:
         - pip
         - python
         - setuptools
+        - yarn
       run:
         - click >=7.0,<9
         - cloudpickle <4

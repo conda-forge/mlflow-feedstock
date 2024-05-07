@@ -9,6 +9,11 @@ if [%PKG_NAME%] == [mlflow-skinny] (
   # https://github.com/mlflow/mlflow/pull/4134
   copy %RECIPE_DIR%/README_SKINNY.rst %SRC_DIR%
   copy pyproject.skinny.toml pyproject.toml
+
+  pushd mlflow/server/js
+  yarn install
+  yarn build
+  popd
 ) else (
   copy pyproject.full.toml pyproject.toml
 )
