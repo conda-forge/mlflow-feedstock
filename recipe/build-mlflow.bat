@@ -23,6 +23,7 @@ if [%PKG_NAME%] == [mlflow-ui] (
 %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
 
 if [%PKG_NAME%] NEQ [mlflow-ui-dbg] (
-  bash -c 'rm -f ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/css/*.css.map'
-  bash -c 'rm -f ${PREFIX//\\\\//}/Lib/site-packages/mlflow/server/js/build/static/js/*.js.map'
+  rmdir /s /q $SP_DIR\mlflow\server\js\node_modules
+  bash -c 'rm -f ${SP_DIR//\\\\//}/mlflow/server/js/build/static/css/*.css.map'
+  bash -c 'rm -f ${SP_DIR//\\\\//}/mlflow/server/js/build/static/js/*.js.map'
 )
