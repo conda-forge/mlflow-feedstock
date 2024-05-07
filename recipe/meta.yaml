@@ -28,7 +28,6 @@ outputs:
         - pip
         - python
         - setuptools
-        - yarn
       run:
         - click >=7.0,<9
         - cloudpickle <4
@@ -202,6 +201,7 @@ outputs:
       build:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - yarn
       host:
         - python
         - pip

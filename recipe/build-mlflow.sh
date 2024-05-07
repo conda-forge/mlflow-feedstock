@@ -11,13 +11,15 @@ if [[ "${PKG_NAME}" == "mlflow-skinny" ]]; then
   # https://github.com/mlflow/mlflow/pull/4134
   cp ${RECIPE_DIR}/README_SKINNY.rst ${SRC_DIR}
   cp pyproject.skinny.toml pyproject.toml
+else
+  cp pyproject.full.toml pyproject.toml
+fi
 
+if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install
   yarn build
   popd
-else
-  cp pyproject.full.toml pyproject.toml
 fi
 
 $PREFIX/bin/python -m pip install . --no-deps --ignore-installed --no-build-isolation -vv
