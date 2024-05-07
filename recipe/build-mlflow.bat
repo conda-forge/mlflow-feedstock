@@ -14,7 +14,7 @@ if [%PKG_NAME%] == [mlflow-skinny] (
 )
 
 if [%PKG_NAME%] == [mlflow-ui] (
-  pushd mlflow/server/js
+  pushd mlflow\server\js
   yarn install
   yarn build
   popd
