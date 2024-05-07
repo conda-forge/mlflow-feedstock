@@ -220,8 +220,8 @@ outputs:
     test:
       commands:
         - mlflow --help
-        - test -f $SP_DIR/mlflow/server/js/build/index.html  # [unix]
-        - if not exist %SP_DIR%\mlflow\server\js\build\index.html exit 1 # [win]
+        - test -f $SP_DIR/mlflow/server/js/build/index.html               # [unix]
+        - if not exist %SP_DIR%\mlflow\server\js\build\index.html exit 1  # [win]
 
 
 about:
