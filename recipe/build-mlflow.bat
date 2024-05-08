@@ -15,7 +15,7 @@ if [%PKG_NAME%] == [mlflow-skinny] (
 
 if [%PKG_NAME%] == [mlflow-ui] (
   pushd mlflow\server\js
-  yarn install --frozen-lockfile
+  yarn install --immutable
   if %ERRORLEVEL% neq 0 exit 1
   yarn build
   if %ERRORLEVEL% neq 0 exit 1
@@ -23,6 +23,7 @@ if [%PKG_NAME%] == [mlflow-ui] (
 )
 
 %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
+if %ERRORLEVEL% neq 0 exit 1
 
 if [%PKG_NAME%] NEQ [mlflow-ui-dbg] (
   rmdir /s /q $SP_DIR\mlflow\server\js\node_modules
