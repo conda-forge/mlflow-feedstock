@@ -15,7 +15,7 @@ if [%PKG_NAME%] == [mlflow-skinny] (
 
 if [%PKG_NAME%] == [mlflow-ui] (
   pushd mlflow\server\js
-  yarn install
+  yarn install --frozen-lockfile
   if %ERRORLEVEL% neq 0 exit 1
   yarn build
   if %ERRORLEVEL% neq 0 exit 1
