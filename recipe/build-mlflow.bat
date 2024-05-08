@@ -18,9 +18,9 @@ if [%PKG_NAME%] == [mlflow-ui] (
 
   @rem The lockfile is not installable in an immutable fashion on Windows
   set YARN_ENABLE_IMMUTABLE_INSTALLS=false
-  yarn install
+  cmd /c yarn install
   if %ERRORLEVEL% neq 0 exit 1
-  yarn build
+  cmd /c yarn build
   if %ERRORLEVEL% neq 0 exit 1
 
   popd
@@ -29,8 +29,10 @@ if [%PKG_NAME%] == [mlflow-ui] (
 %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
 if %ERRORLEVEL% neq 0 exit 1
 
+xcopy mlflow\server\js\build %SP_DIR%\mlflow\server\js\build /s /e /h
+
 if [%PKG_NAME%] NEQ [mlflow-ui-dbg] (
-  rmdir /s /q $SP_DIR\mlflow\server\js\node_modules
+  rmdir /s /q %SP_DIR%\mlflow\server\js\node_modules
   bash -c 'rm -f ${SP_DIR//\\\\//}/mlflow/server/js/build/static/css/*.css.map'
   bash -c 'rm -f ${SP_DIR//\\\\//}/mlflow/server/js/build/static/js/*.js.map'
 )
