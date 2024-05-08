@@ -29,7 +29,7 @@ if [%PKG_NAME%] == [mlflow-ui] (
 %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
 if %ERRORLEVEL% neq 0 exit 1
 
-xcopy mlflow\server\js\build %SP_DIR%\mlflow\server\js\build /s /e /h /i
+xcopy /s /y mlflow\server\js\build %SP_DIR%\mlflow\server\js\build
 
 if [%PKG_NAME%] NEQ [mlflow-ui-dbg] (
   rmdir /s /q %SP_DIR%\mlflow\server\js\node_modules
