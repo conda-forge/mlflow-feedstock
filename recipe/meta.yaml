@@ -10,7 +10,7 @@ source:
   sha256: d270f6503c8e0087c6f31cbe6fef2766d89fff71ff1ff03b1c5858554e279c62
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: mlflow-skinny
@@ -201,6 +201,8 @@ outputs:
       build:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - nodejs 16.*
+        - yarn
       host:
         - python
         - pip
@@ -218,6 +220,8 @@ outputs:
     test:
       commands:
         - mlflow --help
+        - test -f $SP_DIR/mlflow/server/js/build/index.html               # [unix]
+        - if not exist %SP_DIR%\mlflow\server\js\build\index.html exit 1  # [win]
 
 
 about:
