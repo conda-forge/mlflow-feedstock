@@ -41,6 +41,9 @@ outputs:
         - requests >=2.17.3,<3
         - sqlparse >=0.4.0,<1
         - importlib-metadata <8,>=3.7.0,!=4.7.0
+        - cachetools<6,>=5.0.0
+        - opentelemetry-api<3,>=1.0.0
+        - opentelemetry-sdk<3,>=1.0.0
       run_constrained:
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
