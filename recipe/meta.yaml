@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.12.2" %}
+{% set version = "2.13.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: bdec209c55cd33fbe79deb32d6cb9966d50a4674aac00b706e2658ac81ee58bc
+  sha256: 83fc31849260cc986994f870ad0c006711f6369ad067e529594de68acf0b4340
 
 build:
   number: 0
@@ -41,6 +41,9 @@ outputs:
         - requests >=2.17.3,<3
         - sqlparse >=0.4.0,<1
         - importlib-metadata <8,>=3.7.0,!=4.7.0
+        - cachetools<6,>=5.0.0
+        - opentelemetry-api<3,>=1.0.0
+        - opentelemetry-sdk<3,>=1.0.0
       run_constrained:
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
