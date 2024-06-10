@@ -32,9 +32,9 @@ outputs:
         - click >=7.0,<9
         - cloudpickle <4
         - entrypoints <1
-        - gitpython >=2.1.0,<4
+        - gitpython >=3.1.9,<4
         - packaging <25
-        - protobuf >=3.12.0,<6
+        - protobuf >=3.12.0,<5
         - python
         - pytz <2025
         - pyyaml >=5.1,<7
@@ -88,7 +88,7 @@ outputs:
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
         - flask <4
-        - gunicorn <22  # [not win]
+        - gunicorn <23  # [not win]
         - numpy <2
         - pandas <3
         - prometheus_flask_exporter <1
@@ -215,7 +215,7 @@ outputs:
         - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
-        - gunicorn <22  # [not win]
+        - gunicorn <23  # [not win]
         - waitress <3  # [win]
         - querystring_parser <2
     script: build-mlflow.bat  # [win]
