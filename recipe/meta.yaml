@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.15.1" %}
+{% set version = "2.16.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: b7503a5ad64e7b970e5168ea54a1595b4b48bd17412181cc5bfdf61e8a5620d1
+  sha256: c9f8610142445556a4aee1849e7129056e6b67b180f86609f180740c5c9f051a
 
 build:
   number: 0
@@ -40,7 +40,7 @@ outputs:
         - pyyaml >=5.1,<7
         - requests >=2.17.3,<3
         - sqlparse >=0.4.0,<1
-        - importlib-metadata <8,>=3.7.0,!=4.7.0
+        - importlib-metadata <9,>=3.7.0,!=4.7.0
         - cachetools<6,>=5.0.0
         - opentelemetry-api<3,>=1.0.0
         - opentelemetry-sdk<3,>=1.0.0
@@ -89,8 +89,8 @@ outputs:
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
         - flask <4
-        - gunicorn <23  # [not win]
-        - numpy <2
+        - gunicorn <24  # [not win]
+        - numpy <3
         - pandas <3
         - prometheus_flask_exporter <1
         - querystring_parser <2
@@ -98,7 +98,7 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <16,>=4.0.0
+        - pyarrow <18,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
