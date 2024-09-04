@@ -40,7 +40,7 @@ outputs:
         - pyyaml >=5.1,<7
         - requests >=2.17.3,<3
         - sqlparse >=0.4.0,<1
-        - importlib-metadata <8,>=3.7.0,!=4.7.0
+        - importlib-metadata <9,>=3.7.0,!=4.7.0
         - cachetools<6,>=5.0.0
         - opentelemetry-api<3,>=1.0.0
         - opentelemetry-sdk<3,>=1.0.0
@@ -89,8 +89,8 @@ outputs:
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
         - flask <4
-        - gunicorn <23  # [not win]
-        - numpy <2
+        - gunicorn <24  # [not win]
+        - numpy <3
         - pandas <3
         - prometheus_flask_exporter <1
         - querystring_parser <2
@@ -98,7 +98,7 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <16,>=4.0.0
+        - pyarrow <18,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
