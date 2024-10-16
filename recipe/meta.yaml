@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.16.2" %}
+{% set version = "2.17.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: d101bf639b7671408d67d357f4af207e8655a41d50ca3befa951026d49751e39
+  sha256: 434adbd57dae7b99350c81b1b9feb24e3d12e1f6e8c085372b7d6d119d65efe0
 
 build:
   number: 0
@@ -34,7 +34,7 @@ outputs:
         - entrypoints <1
         - gitpython >=3.1.9,<4
         - packaging <25
-        - protobuf >=3.12.0,<5
+        - protobuf >=3.12.0,<6
         - python
         - pytz <2025
         - pyyaml >=5.1,<7
