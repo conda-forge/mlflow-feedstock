@@ -10,7 +10,7 @@ source:
   sha256: 9f6304ec34f355f205bf125263da6c60149e54e8cdaa93e8372968538581ae0b
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
