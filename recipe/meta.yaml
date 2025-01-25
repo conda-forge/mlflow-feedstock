@@ -10,7 +10,7 @@ source:
   sha256: 81b3fbe4cc6b2f61c3778a8f672769a6983b4b2498d43972b5f2dd3b2dfc3405
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
@@ -160,13 +160,13 @@ outputs:
       skip: true  # [not linux64]
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - pydantic >=1.0,<3
         - fastapi <1
@@ -175,6 +175,8 @@ outputs:
         - aiohttp <4
         - boto3 >=1.28.56,<2
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
@@ -185,17 +187,19 @@ outputs:
       skip: true  # [not linux64]
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
