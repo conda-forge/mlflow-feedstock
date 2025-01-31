@@ -10,7 +10,7 @@ source:
   sha256: 5751c384dcaf7e31063df67855aed42d1e1a35634c9fc40cd668cc57fed3ce0d
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
@@ -217,8 +217,8 @@ outputs:
         - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
-        - gunicorn <23  # [not win]
-        - waitress <3  # [win]
+        - gunicorn <24  # [not win]
+        - waitress <4  # [win]
         - querystring_parser <2
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
