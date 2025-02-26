@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.20.2" %}
+{% set version = "2.20.3" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: deb387ce88b561a5a88d34ca8956714fd9fe20fb3a960c30d6402da9b58fe4d0
+  sha256: 6539468abe796d6caae2afeb65b8ba7f5ed6bfce679c3f59dfb3be91f63a83db
 
 build:
   number: 0
