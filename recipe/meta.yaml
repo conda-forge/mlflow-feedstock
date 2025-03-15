@@ -99,7 +99,7 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <19,>=4.0.0
+        - pyarrow <20,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
