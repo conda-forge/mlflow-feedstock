@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.20.3" %}
+{% set version = "2.20.4" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 6539468abe796d6caae2afeb65b8ba7f5ed6bfce679c3f59dfb3be91f63a83db
+  sha256: ab4821a10047111a14857432b2541444164dc8893ba189b2e669010bbf86dbcc
 
 build:
   number: 0
@@ -29,24 +29,21 @@ outputs:
         - python
         - setuptools
       run:
-        - click >=7.0,<9
+        - cachetools <6,>=5.0.0
+        - click <9,>=7.0
         - cloudpickle <4
-        - entrypoints <1
-        - gitpython >=3.1.9,<4
-        - packaging <25
-        - protobuf >=3.12.0,<6
-        - python
-        - pytz <2025
-        - pyyaml >=5.1,<7
-        - requests >=2.17.3,<3
-        - sqlparse >=0.4.0,<1
-        - importlib-metadata <9,>=3.7.0,!=4.7.0
-        - cachetools<6,>=5.0.0
-        - opentelemetry-api<3,>=1.0.0
-        - opentelemetry-sdk<3,>=1.0.0
         - databricks-sdk <1,>=0.20.0
-        - pydantic<3,>=1.0
-        - typing-extensions<5,>=4.0.0
+        - gitpython <4,>=3.1.9
+        - importlib-metadata <9,>=3.7.0,!=4.7.0
+        - opentelemetry-api <3,>=1.9.0
+        - opentelemetry-sdk <3,>=1.9.0
+        - packaging <25
+        - protobuf <6,>=3.12.0
+        - pydantic <3,>=1.10.8
+        - pyyaml <7,>=5.1
+        - requests <3,>=2.17.3
+        - sqlparse <1,>=0.4.0
+        - typing-extensions <5,>=4.0.0
       run_constrained:
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
@@ -99,12 +96,12 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <19,>=4.0.0
+        - pyarrow <20,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
         - matplotlib-base <4
-        - graphene<4
+        - graphene <4
     test:
       imports:
         - mlflow
