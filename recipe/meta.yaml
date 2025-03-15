@@ -34,7 +34,7 @@ outputs:
         - cloudpickle <4
         - databricks-sdk <1,>=0.20.0
         - gitpython <4,>=3.1.9
-        - importlib_metadata <9,>=3.7.0,!=4.7.0
+        - importlib-metadata <9,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
         - packaging <25
