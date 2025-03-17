@@ -1,18 +1,5 @@
 @echo on
 
-if not exist pyproject-full.toml (
-    copy pyproject.toml pyproject.full.toml
-)
-
-if [%PKG_NAME%] == [mlflow-skinny] (
-  set MLFLOW_SKINNY=1
-  # https://github.com/mlflow/mlflow/pull/4134
-  copy %RECIPE_DIR%/README_SKINNY.rst %SRC_DIR%
-  copy pyproject.skinny.toml pyproject.toml
-) else (
-  copy pyproject.full.toml pyproject.toml
-)
-
 if [%PKG_NAME%] == [mlflow-ui] (
   pushd mlflow\server\js
 
@@ -26,7 +13,13 @@ if [%PKG_NAME%] == [mlflow-ui] (
   popd
 )
 
-%PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
+if [%PKG_NAME%] == [mlflow-skinny] (
+  set MLFLOW_SKINNY=1
+  %PREFIX%/python.exe -m pip install ./skinny --no-deps --ignore-installed -vv
+) else (
+  %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
+)
+
 if %ERRORLEVEL% neq 0 exit 1
 
 xcopy /i /s /y mlflow\server\js\build %SP_DIR%\mlflow\server\js\build

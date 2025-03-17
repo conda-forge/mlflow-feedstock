@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.20.4" %}
+{% set version = "2.21.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: ab4821a10047111a14857432b2541444164dc8893ba189b2e669010bbf86dbcc
+  sha256: 60f313b3aac98b52833dd5db4472df2d3af8c67f48df8822048cc170c2cb251c
 
 build:
   number: 0
@@ -44,11 +44,11 @@ outputs:
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
+        - fastapi <1
+        - uvicorn <1
       run_constrained:
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
-        - fastapi <1
-        - uvicorn-standard <1
         - watchfiles <1
         - aiohttp <4
         - boto3 >=1.28.56,<2
@@ -102,6 +102,8 @@ outputs:
         - jinja2 <4,>=2.11  # [not win]
         - matplotlib-base <4
         - graphene <4
+        - fastapi <1
+        - uvicorn <1
     test:
       imports:
         - mlflow
@@ -166,8 +168,6 @@ outputs:
         - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - pydantic >=1.0,<3
-        - fastapi <1
-        - uvicorn-standard <1
         - watchfiles <1
         - aiohttp <4
         - boto3 >=1.28.56,<2
