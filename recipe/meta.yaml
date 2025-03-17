@@ -45,7 +45,7 @@ outputs:
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
         - fastapi <1
-        - uvicorn<1
+        - uvicorn <1
       run_constrained:
         # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
         # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
@@ -103,7 +103,7 @@ outputs:
         - matplotlib-base <4
         - graphene <4
         - fastapi <1
-        - uvicorn<1
+        - uvicorn <1
     test:
       imports:
         - mlflow
