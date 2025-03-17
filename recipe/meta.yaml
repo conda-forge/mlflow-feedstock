@@ -238,6 +238,7 @@ about:
 extra:
   feedstock-name: mlflow
   recipe-maintainers:
+    - TomeHirata
     - daniellok-db
     - B-Step62
     - serena-ruan
