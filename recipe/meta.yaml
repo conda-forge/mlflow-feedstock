@@ -156,7 +156,7 @@ outputs:
     build:
       noarch: python
       # Skip this package for cross-builds. We will only need a single upload anyways
-      skip: true  # [not linux64]
+      skip: true  # [not (linux64 and python.startswith(python_min))]
     requirements:
       host:
         - python {{ python_min }}
@@ -179,7 +179,7 @@ outputs:
     build:
       noarch: python
       # Skip this package for cross-builds. We will only need a single upload anyways
-      skip: true  # [not linux64]
+      skip: true  # [not (linux64 and python.startswith(python_min))]
     requirements:
       host:
         - python
