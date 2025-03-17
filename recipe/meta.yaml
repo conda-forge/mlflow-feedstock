@@ -159,7 +159,7 @@ outputs:
       skip: true  # [not linux64]
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
