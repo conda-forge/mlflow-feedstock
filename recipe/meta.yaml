@@ -89,7 +89,7 @@ outputs:
         - flask <4
         - gunicorn <24  # [not win]
         - numpy <3
-        - pandas <3
+        - pandas <3,!=2.3.0
         - prometheus_flask_exporter <1
         - querystring_parser <2
         - scipy <2
