@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "2.22.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 03d50de94626849753db705c616d1b16fcbe4705dabf2711927289ab289fe890
+  sha256: a773a7af3f7f9f5a494a09b24902eea5f8310972eb8b6cf56474a0c4c3e32842
 
 build:
   number: 0
@@ -122,7 +122,6 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
-        - mlflow recipes --help
         # This should not be packaged
         - test ! -f $SP_DIR/pylint_plugins  # [unix]
         - pip check
