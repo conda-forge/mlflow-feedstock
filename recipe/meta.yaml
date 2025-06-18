@@ -122,7 +122,6 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
-        - mlflow recipes --help
         # This should not be packaged
         - test ! -f $SP_DIR/pylint_plugins  # [unix]
         - pip check
