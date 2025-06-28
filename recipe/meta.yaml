@@ -11,6 +11,9 @@ source:
 
 build:
   number: 0
+  script_env:
+    - JOBS=1
+    - npm_config_jobs=1
 
 outputs:
   - name: mlflow-skinny
