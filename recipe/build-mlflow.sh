@@ -2,6 +2,11 @@
 
 set -euxo pipefail
 
+export JOBS=1
+export npm_config_jobs=1
+export NODE_OPTIONS=--max-old-space-size=1024
+export MAKEFLAGS=-j1
+
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install

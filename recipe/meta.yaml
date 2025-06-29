@@ -11,10 +11,6 @@ source:
 
 build:
   number: 0
-  script_env:
-    - JOBS=1
-    - npm_config_jobs=1
-    - NODE_OPTIONS=--max-old-space-size=1024
 
 outputs:
   - name: mlflow-skinny
