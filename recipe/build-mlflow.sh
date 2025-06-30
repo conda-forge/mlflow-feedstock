@@ -4,13 +4,7 @@ set -euxo pipefail
 
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
 
-  TAR_PATH="${SRC_DIR}/../mlflow-${PKG_VERSION}"
-  TMP_DIR="$(mktemp -d)"
-  EXTRACT_DIR="${TMP_DIR}/mlflow-${PKG_VERSION}"
-
-  echo "Extracting to ${EXTRACT_DIR}..."
-  mkdir -p "${EXTRACT_DIR}"
-  tar -xzf "${TAR_PATH}" -C "${EXTRACT_DIR}" --strip-components=1
+  EXTRACT_DIR="${SRC_DIR}/../mlflow-${PKG_VERSION}"
 
   SRC_JS_BUILD="${EXTRACT_DIR}/mlflow/server/js/build"
   DEST_DIR="mlflow/server/js/build"
