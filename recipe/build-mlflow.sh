@@ -10,7 +10,7 @@ export MAKEFLAGS=-j1
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install
-  yarn craco --max_old_space_size=1024 build
+  yarn craco --max_old_space_size=2048 build
   popd
 fi
 
