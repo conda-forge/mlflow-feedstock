@@ -2,15 +2,29 @@
 
 set -euxo pipefail
 
-export JOBS=1
-export npm_config_jobs=1
-# export NODE_OPTIONS=--max-old-space-size=2048
-export MAKEFLAGS=-j1
-
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
-  yarn install
-  yarn craco --max_old_space_size=4096 build
+
+  FILENAME="mlflow-${PKG_VERSION}.tar.gz"
+  DOWNLOAD_URL="https://files.pythonhosted.org/packages/source/m/mlflow/${FILENAME}"
+  TMP_DIR="/tmp"
+  TAR_PATH="${TMP_DIR}/${FILENAME}"
+  EXTRACT_DIR="${TMP_DIR}/mlflow-${PKG_VERSION}"
+
+  echo "Downloading ${FILENAME}..."
+  curl -L -o "${TAR_PATH}" "${DOWNLOAD_URL}"
+
+  echo "Extracting to ${EXTRACT_DIR}..."
+  mkdir -p "${EXTRACT_DIR}"
+  tar -xzf "${TAR_PATH}" -C "${EXTRACT_DIR}" --strip-components=1
+
+  SRC_JS_BUILD="${EXTRACT_DIR}/mlflow/server/js/build"
+  DEST_DIR="$(pwd)/build"
+
+  echo "Moving ${SRC_JS_BUILD} to ${DEST_DIR}..."
+  rm -rf "${DEST_DIR}"
+  mv "${SRC_JS_BUILD}" "${DEST_DIR}"
+
   popd
 fi
 
