@@ -24,6 +24,8 @@ if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   rm -rf "${DEST_DIR}"
   mv "${SRC_JS_BUILD}" "${DEST_DIR}"
 
+  echo "The files in $DEST_DIR are:"
+  ls $DEST_DIR
 fi
 
 if [[ "${PKG_NAME}" == "mlflow-skinny" ]]; then
