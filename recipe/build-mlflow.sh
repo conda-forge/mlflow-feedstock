@@ -4,13 +4,13 @@ set -euxo pipefail
 
 export JOBS=1
 export npm_config_jobs=1
-export NODE_OPTIONS=--max-old-space-size=2048
+# export NODE_OPTIONS=--max-old-space-size=2048
 export MAKEFLAGS=-j1
 
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install
-  yarn build
+  yarn craco --max_old_space_size=1024 build
   popd
 fi
 
