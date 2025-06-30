@@ -1,0 +1,21 @@
+From a1cb607ae35933a74acf42c8691bd51da779830a Mon Sep 17 00:00:00 2001
+From: "Uwe L. Korn" <uwe.korn@quantco.com>
+Date: Mon, 30 Jun 2025 11:51:53 +0200
+Subject: [PATCH] Build leaner source maps
+
+---
+ mlflow/server/js/craco.config.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/mlflow/server/js/craco.config.js b/mlflow/server/js/craco.config.js
+index 75dd4f9..121ec3d 100644
+--- a/mlflow/server/js/craco.config.js
++++ b/mlflow/server/js/craco.config.js
+@@ -290,6 +290,7 @@ module.exports = function () {
+         webpackConfig = i18nOverrides(webpackConfig);
+         webpackConfig = configureIframeCSSPublicPaths(webpackConfig, env);
+         webpackConfig = enableOptionalTypescript(webpackConfig);
++        delete webpackConfig.devtool;
+         webpackConfig.resolve = {
+           ...webpackConfig.resolve,
+           plugins: [new TsconfigPathsPlugin(), ...webpackConfig.resolve.plugins],
