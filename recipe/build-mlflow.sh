@@ -5,6 +5,7 @@ set -euxo pipefail
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
 
   TAR_PATH="${SRC_DIR}/../mlflow-${PKG_VERSION}"
+  TMP_DIR="$(mktemp -d)"
   EXTRACT_DIR="${TMP_DIR}/mlflow-${PKG_VERSION}"
 
   echo "Extracting to ${EXTRACT_DIR}..."
