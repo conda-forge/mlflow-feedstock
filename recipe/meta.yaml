@@ -6,8 +6,11 @@ package:
   version: {{ version }}
 
 source:
+<<<<<<< HEAD
   - url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
     sha256: daf73af57498ec18032a424c6a906b85313cdf764c2803ff4db2e237eff94014
+    patches:
+      - 0001-Build-leaner-source-maps.patch
 
   - url: https://files.pythonhosted.org/packages/source/m/mlflow/mlflow-{{ version }}.tar.gz
     sha256: ee98fe929d61625b72ae5010fbf12a7c6d15527790397827191fd6e8246c33e5
