@@ -4,14 +4,8 @@ set -euxo pipefail
 
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
 
-  FILENAME="mlflow-${PKG_VERSION}.tar.gz"
-  DOWNLOAD_URL="https://files.pythonhosted.org/packages/source/m/mlflow/${FILENAME}"
-  TMP_DIR="$(mktemp -d)"
-  TAR_PATH="${TMP_DIR}/${FILENAME}"
+  TAR_PATH="${SRC_DIR}/../mlflow-${PKG_VERSION}"
   EXTRACT_DIR="${TMP_DIR}/mlflow-${PKG_VERSION}"
-
-  echo "Downloading ${FILENAME}..."
-  curl -fL -o "${TAR_PATH}" "${DOWNLOAD_URL}"
 
   echo "Extracting to ${EXTRACT_DIR}..."
   mkdir -p "${EXTRACT_DIR}"
