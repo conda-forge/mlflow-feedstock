@@ -6,7 +6,6 @@ package:
   version: {{ version }}
 
 source:
-<<<<<<< HEAD
   - url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
     sha256: daf73af57498ec18032a424c6a906b85313cdf764c2803ff4db2e237eff94014
     patches:
