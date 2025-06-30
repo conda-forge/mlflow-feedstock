@@ -4,7 +4,7 @@ set -euxo pipefail
 
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
 
-  EXTRACT_DIR="${SRC_DIR}/../mlflow-${PKG_VERSION}"
+  EXTRACT_DIR="${SRC_DIR}/mlflow-${PKG_VERSION}"
 
   SRC_JS_BUILD="${EXTRACT_DIR}/mlflow/server/js/build"
   DEST_DIR="mlflow/server/js/build"
