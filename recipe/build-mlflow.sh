@@ -11,7 +11,7 @@ fi
 
 if [[ "${PKG_NAME}" == "mlflow-skinny" ]]; then
   export MLFLOW_SKINNY=1
-  $PREFIX/bin/python -m pip install ./skinny --no-deps --ignore-installed --no-build-isolation -vv
+  $PREFIX/bin/python -m pip install ./libs/skinny --no-deps --ignore-installed --no-build-isolation -vv
 else
   $PREFIX/bin/python -m pip install . --no-deps --ignore-installed --no-build-isolation -vv
 fi
