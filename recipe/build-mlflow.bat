@@ -15,6 +15,8 @@ if [%PKG_NAME%] == [mlflow-ui] (
 
 if [%PKG_NAME%] == [mlflow-skinny] (
   set MLFLOW_SKINNY=1
+  dir libs\skinny
+  exit 1
   %PREFIX%/python.exe -m pip install ./libs/skinny --no-deps --ignore-installed -vv
 ) else (
   %PREFIX%/python.exe -m pip install . --no-deps --ignore-installed -vv
