@@ -12,7 +12,7 @@ source:
     - 0001-Build-leaner-source-maps.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
@@ -31,7 +31,7 @@ outputs:
         - python
         - setuptools
       run:
-        - cachetools <6,>=5.0.0
+        - cachetools <7,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
         - databricks-sdk <1,>=0.20.0
@@ -39,8 +39,8 @@ outputs:
         - importlib-metadata <9,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
-        - packaging <25
-        - protobuf <6,>=3.12.0
+        - packaging <26
+        - protobuf <7,>=3.12.0
         - pydantic <3,>=1.10.8
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
@@ -98,7 +98,7 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <20,>=4.0.0
+        - pyarrow <21,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
