@@ -1,6 +1,5 @@
 {% set name = "mlflow" %}
 {% set version = "3.2.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: mlflow-split
@@ -29,7 +28,7 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python >={{ python_min }}
+        - python
         - setuptools
       run:
         - cachetools <7,>=5.0.0
@@ -82,7 +81,7 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python >={{ python_min }}
+        - python
         - setuptools
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
       run:
@@ -140,13 +139,13 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >={{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
@@ -161,13 +160,13 @@ outputs:
       skip: true  # [not linux64]
     requirements:
       host:
-        - python >={{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - pydantic >=1.0,<3
         - watchfiles <1
@@ -184,14 +183,14 @@ outputs:
       skip: true  # [not linux64]
     requirements:
       host:
-        - python >={{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
     test:
@@ -208,12 +207,12 @@ outputs:
         - nodejs 20.*
         - yarn
       host:
-        - python >={{ python_min }}
+        - python
         - pip
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
         - gunicorn <24  # [not win]
