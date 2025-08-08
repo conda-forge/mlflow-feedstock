@@ -12,7 +12,7 @@ source:
     - 0001-Build-leaner-source-maps.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
@@ -98,7 +98,7 @@ outputs:
         - sqlalchemy >=1.4.0,<3
         - waitress <4  # [win]
         - scikit-learn <2
-        - pyarrow <21,>=4.0.0
+        - pyarrow <22,>=4.0.0
         - markdown <4,>=3.3
         - jinja2 <4,>=3.0  # [win]
         - jinja2 <4,>=2.11  # [not win]
