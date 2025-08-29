@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.3.1" %}
+{% set version = "3.3.2" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: da807e14661c3743e306d40cba6ab414e21d371137132dc857207f9f1069d4ae
+  sha256: 9cfa071e7a75ff4a0d47a3ee4bfc948a6dfa019edc2863325b71d2362f61b760
   patches:
     - 0001-Build-leaner-source-maps.patch
 
