@@ -12,7 +12,7 @@ source:
     - 0001-Build-leaner-source-maps.patch
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: mlflow-skinny
