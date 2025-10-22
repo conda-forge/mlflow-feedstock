@@ -6,6 +6,7 @@ if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install
   yarn build
+  rm -rf node_modules
   popd
 fi
 
