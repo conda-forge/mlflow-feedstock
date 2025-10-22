@@ -91,6 +91,7 @@ outputs:
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
+        - fastmcp <3,>=2.0.0
         - flask <4
         - gunicorn <24  # [not win]
         - numpy <3
