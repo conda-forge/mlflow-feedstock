@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.4.0" %}
+{% set version = "3.5.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 252abfb844c3451e01f481a830e112f9b22db3f3de55f21c46c0c836dcb433bd
+  sha256: 217c0b2e686e04caaa2ac890c28902e8d652fc0ddcbf1e35fd1f7642c36599a5
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -34,7 +34,7 @@ outputs:
         - cachetools <7,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
-        - cryptography <46,>=43.0.0
+        - cryptography <47,>=43.0.0
         - databricks-sdk <1,>=0.20.0
         - gitpython <4,>=3.1.9
         - importlib-metadata <9,>=3.7.0,!=4.7.0
@@ -93,6 +93,7 @@ outputs:
         - docker-py >=4.0.0,<8
         - fastmcp <3,>=2.0.0
         - flask <4
+        - flask-cors <7
         - gunicorn <24  # [not win]
         - numpy <3
         - pandas <3
