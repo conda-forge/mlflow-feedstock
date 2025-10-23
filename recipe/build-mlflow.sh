@@ -2,6 +2,9 @@
 
 set -euxo pipefail
 
+# Delete this directory. It is not installed and 0.5G in size
+rm -rf docs
+
 if [[ "${PKG_NAME}" == "mlflow-ui" ]]; then
   pushd mlflow/server/js
   yarn install

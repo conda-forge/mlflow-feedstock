@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.3.2" %}
+{% set version = "3.4.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 9cfa071e7a75ff4a0d47a3ee4bfc948a6dfa019edc2863325b71d2362f61b760
+  sha256: 252abfb844c3451e01f481a830e112f9b22db3f3de55f21c46c0c836dcb433bd
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -40,9 +40,11 @@ outputs:
         - importlib-metadata <9,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
+        - opentelemetry-proto <3,>=1.9.0
         - packaging <26
         - protobuf <7,>=3.12.0
         - pydantic <3,>=1.10.8
+        - python-dotenv <2,>=0.19.0
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
@@ -89,6 +91,7 @@ outputs:
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
         - docker-py >=4.0.0,<8
+        - fastmcp <3,>=2.0.0
         - flask <4
         - gunicorn <24  # [not win]
         - numpy <3
