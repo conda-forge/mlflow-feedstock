@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.5.0" %}
+{% set version = "3.5.1" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 217c0b2e686e04caaa2ac890c28902e8d652fc0ddcbf1e35fd1f7642c36599a5
+  sha256: b8e71eb88512d0528485f6a58f44484e023339849b1dd1a2b9858d92d04205d3
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -34,13 +34,13 @@ outputs:
         - cachetools <7,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
-        - cryptography <47,>=43.0.0
         - databricks-sdk <1,>=0.20.0
+        - fastapi <1
         - gitpython <4,>=3.1.9
         - importlib-metadata <9,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
-        - opentelemetry-sdk <3,>=1.9.0
         - opentelemetry-proto <3,>=1.9.0
+        - opentelemetry-sdk <3,>=1.9.0
         - packaging <26
         - protobuf <7,>=3.12.0
         - pydantic <3,>=1.10.8
@@ -49,14 +49,7 @@ outputs:
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
-        - fastapi <1
         - uvicorn <1
-      run_constrained:
-        # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
-        # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
-        - watchfiles <2
-        - aiohttp <4
-        - boto3 >=1.28.56,<2
     test:
       imports:
         - mlflow
@@ -90,27 +83,40 @@ outputs:
       run:
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
+        - cachetools <7,>=5.0.0
+        - click <9,>=7.0
+        - cloudpickle <4
+        - cryptography <47,>=43.0.0
+        - databricks-sdk <1,>=0.20.0
         - docker-py >=4.0.0,<8
-        - fastmcp <3,>=2.0.0
+        - fastapi <1
         - flask <4
         - flask-cors <7
+        - gitpython <4,>=3.1.9
+        - graphene <4
         - gunicorn <24  # [not win]
+        - importlib-metadata <9,>=3.7.0,!=4.7.0
+        - matplotlib-base <4
         - numpy <3
+        - opentelemetry-api <3,>=1.9.0
+        - opentelemetry-proto <3,>=1.9.0
+        - opentelemetry-sdk <3,>=1.9.0
+        - packaging <26
         - pandas <3
         - prometheus_flask_exporter <1
-        - querystring_parser <2
+        - protobuf <7,>=3.12.0
+        - pyarrow <22,>=4.0.0
+        - pydantic <3,>=1.10.8
+        - python-dotenv <2,>=0.19.0
+        - pyyaml <7,>=5.1
+        - requests <3,>=2.17.3
+        - scikit-learn <2
         - scipy <2
         - sqlalchemy >=1.4.0,<3
-        - waitress <4  # [win]
-        - scikit-learn <2
-        - pyarrow <22,>=4.0.0
-        - markdown <4,>=3.3
-        - jinja2 <4,>=3.0  # [win]
-        - jinja2 <4,>=2.11  # [not win]
-        - matplotlib-base <4
-        - graphene <4
-        - fastapi <1
+        - sqlparse <1,>=0.4.0
+        - typing-extensions <5,>=4.0.0
         - uvicorn <1
+        - waitress <4  # [win]
     test:
       imports:
         - mlflow
