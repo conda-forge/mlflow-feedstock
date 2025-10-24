@@ -179,10 +179,13 @@ outputs:
       run:
         - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
-        - pydantic >=1.0,<3
-        - watchfiles <1
         - aiohttp <4
-        - boto3 >=1.28.56,<2
+        - boto3 <2,>=1.28.56
+        - fastapi <1
+        - slowapi <1,>=0.1.9
+        - tiktoken <1
+        - uvicorn <1
+        - watchfiles <2
     test:
       imports:
         - mlflow.gateway
