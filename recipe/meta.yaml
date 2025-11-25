@@ -50,6 +50,8 @@ outputs:
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
+        - __unix # [unix]
+        - __win  # [win]
     test:
       imports:
         - mlflow
@@ -64,7 +66,6 @@ outputs:
         - mlflow --help
         - pip list | grep "mlflow-skinny \+${PKG_VERSION}"  # [unix]
         - pip check
-        - set  # [win]
       requires:
         - pip
         - python {{ python_min }}
@@ -119,6 +120,8 @@ outputs:
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - waitress <4  # [win]
+        - __unix # [unix]
+        - __win  # [win]
     test:
       imports:
         - mlflow
@@ -230,6 +233,8 @@ outputs:
         - gunicorn <24  # [not win]
         - waitress <4  # [win]
         - querystring_parser <2
+        - __unix # [unix]
+        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
