@@ -50,7 +50,7 @@ outputs:
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
-        - __unix # [unix]
+        - __unix  # [unix]
         - __win  # [win]
     test:
       imports:
@@ -120,7 +120,7 @@ outputs:
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - waitress <4  # [win]
-        - __unix # [unix]
+        - __unix  # [unix]
         - __win  # [win]
     test:
       imports:
@@ -163,9 +163,13 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow', exact=True) }}
+        - __unix  # [unix]
+        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - exit 0
 
@@ -189,7 +193,11 @@ outputs:
         - tiktoken <1
         - uvicorn <1
         - watchfiles <2
+        - __unix  # [unix]
+        - __win  # [win]
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
@@ -208,7 +216,11 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
+        - __unix  # [unix]
+        - __win  # [win]
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
@@ -233,11 +245,13 @@ outputs:
         - gunicorn <24  # [not win]
         - waitress <4  # [win]
         - querystring_parser <2
-        - __unix # [unix]
+        - __unix  # [unix]
         - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - mlflow --help
         - test -f $SP_DIR/mlflow/server/js/build/index.html               # [unix]
