@@ -1,3 +1,6 @@
+noarch_platforms:
+  - linux_64
+  - win_64
 azure:
   settings_linux:
     swapfile_size: 10GiB

@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.5.1" %}
+{% set version = "3.6.0" %}
 
 package:
   name: mlflow-split
@@ -7,12 +7,13 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: b8e71eb88512d0528485f6a58f44484e023339849b1dd1a2b9858d92d04205d3
+  sha256: 5f8c0a9025b25e7daa15724f60a1fcbc8c5b62b04ee8aae201ba587393d8d1ab
   patches:
     - 0001-Build-leaner-source-maps.patch
 
 build:
-  number: 1
+  number: 0
+  noarch: python
 
 outputs:
   - name: mlflow-skinny
@@ -20,17 +21,16 @@ outputs:
     script: build-mlflow.bat  # [win]
     version: {{ version }}
     build:
+      noarch: python
       entry_points:
         - mlflow=mlflow.cli:cli
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python
+        - python {{ python_min }}
         - setuptools
       run:
+        - python >={{ python_min }}
         - cachetools <7,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
@@ -50,6 +50,8 @@ outputs:
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
+        - __unix  # [unix]
+        - __win  # [win]
     test:
       imports:
         - mlflow
@@ -64,23 +66,23 @@ outputs:
         - mlflow --help
         - pip list | grep "mlflow-skinny \+${PKG_VERSION}"  # [unix]
         - pip check
-        - set  # [win]
       requires:
         - pip
+        - python {{ python_min }}
   - name: mlflow
     script: build-mlflow.sh  # [unix]
     script: build-mlflow.bat  # [win]
     version: {{ version }}
+    build:
+      noarch: python
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python
+        - python {{ python_min }}
         - setuptools
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
       run:
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
         - cachetools <7,>=5.0.0
@@ -95,6 +97,7 @@ outputs:
         - gitpython <4,>=3.1.9
         - graphene <4
         - gunicorn <24  # [not win]
+        - huey <3,>=2.5.0
         - importlib-metadata <9,>=3.7.0,!=4.7.0
         - matplotlib-base <4
         - numpy <3
@@ -117,6 +120,8 @@ outputs:
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - waitress <4  # [win]
+        - __unix  # [unix]
+        - __win  # [win]
     test:
       imports:
         - mlflow
@@ -142,42 +147,44 @@ outputs:
         - set  # [win]
       requires:
         - pip
+        - python {{ python_min }}
 
   - name: mlflow-ui-dbg
     version: {{ version }}
+    build:
+      noarch: python
     requirements:
-      build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow', exact=True) }}
+        - __unix  # [unix]
+        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - exit 0
 
   - name: mlflow-skinny-gateway
     build:
       noarch: python
-      # Skip this package for cross-builds. We will only need a single upload anyways
-      skip: true  # [not linux64]
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - aiohttp <4
         - boto3 <2,>=1.28.56
@@ -186,55 +193,65 @@ outputs:
         - tiktoken <1
         - uvicorn <1
         - watchfiles <2
+        - __unix  # [unix]
+        - __win  # [win]
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
   - name: mlflow-gateway
     build:
       noarch: python
-      # Skip this package for cross-builds. We will only need a single upload anyways
-      skip: true  # [not linux64]
     requirements:
       host:
-        - python
+        - python {{ python_min }}
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
+        - __unix  # [unix]
+        - __win  # [win]
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
 
   - name: mlflow-ui
     version: {{ version }}
+    build:
+      noarch: python
     requirements:
       build:
-        - python                                 # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - nodejs 20.*
         - yarn
       host:
-        - python
+        - python {{ python_min }}
         - pip
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
         - gunicorn <24  # [not win]
         - waitress <4  # [win]
         - querystring_parser <2
+        - __unix  # [unix]
+        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
+      requires:
+        - python {{ python_min }}
       commands:
         - mlflow --help
         - test -f $SP_DIR/mlflow/server/js/build/index.html               # [unix]
