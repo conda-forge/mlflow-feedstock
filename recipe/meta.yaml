@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: b1c2ef2e36b150d6182272b3a12d3c7485fc4e50643ea1b874b30be84c903b55
+  sha256: 5f8c0a9025b25e7daa15724f60a1fcbc8c5b62b04ee8aae201ba587393d8d1ab
   patches:
     - 0001-Build-leaner-source-maps.patch
 
