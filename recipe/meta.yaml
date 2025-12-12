@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.7.0" %}
+{% set version = "2.22.4" %}
 
 package:
   name: mlflow-split
@@ -7,13 +7,10 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: fd7700cf535538de5135db02ad51f3b272c1a216cc00a9d1f0c5d1be738ab63d
-  patches:
-    - 0001-Build-leaner-source-maps.patch
+  sha256: b27a16e91612c573cab01591feaa5548aa18ecbcdcb5f280cab714e43b8fcf6f
 
 build:
   number: 0
-  noarch: python
 
 outputs:
   - name: mlflow-skinny
@@ -21,37 +18,40 @@ outputs:
     script: build-mlflow.bat  # [win]
     version: {{ version }}
     build:
-      noarch: python
       entry_points:
         - mlflow=mlflow.cli:cli
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python {{ python_min }}
+        - python
         - setuptools
       run:
-        - python >={{ python_min }}
-        - cachetools <7,>=5.0.0
+        - cachetools <6,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
         - databricks-sdk <1,>=0.20.0
-        - fastapi <1
         - gitpython <4,>=3.1.9
         - importlib-metadata <9,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
-        - opentelemetry-proto <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
-        - packaging <26
-        - protobuf <7,>=3.12.0
+        - packaging <25
+        - protobuf <6,>=3.12.0
         - pydantic <3,>=1.10.8
-        - python-dotenv <2,>=0.19.0
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
         - typing-extensions <5,>=4.0.0
+        - fastapi <1
         - uvicorn <1
-        - __unix  # [unix]
-        - __win  # [win]
+      run_constrained:
+        # mlflow[gateway] requirements as it is auto-imported if all dependencies are met
+        # See https://github.com/mlflow/mlflow/blob/045ab98cb4c08e71f0d740a0d5a033d6c69dcf8c/mlflow/__init__.py#L244-L249
+        - watchfiles <2
+        - aiohttp <4
+        - boto3 >=1.28.56,<2
     test:
       imports:
         - mlflow
@@ -66,62 +66,44 @@ outputs:
         - mlflow --help
         - pip list | grep "mlflow-skinny \+${PKG_VERSION}"  # [unix]
         - pip check
+        - set  # [win]
       requires:
         - pip
-        - python {{ python_min }}
   - name: mlflow
     script: build-mlflow.sh  # [unix]
     script: build-mlflow.bat  # [win]
     version: {{ version }}
-    build:
-      noarch: python
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - pip
-        - python {{ python_min }}
+        - python
         - setuptools
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
       run:
-        - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
         - alembic <2,!=1.10
-        - cachetools <7,>=5.0.0
-        - click <9,>=7.0
-        - cloudpickle <4
-        - cryptography <47,>=43.0.0
-        - databricks-sdk <1,>=0.20.0
         - docker-py >=4.0.0,<8
-        - fastapi <1
         - flask <4
-        - flask-cors <7
-        - gitpython <4,>=3.1.9
-        - graphene <4
         - gunicorn <24  # [not win]
-        - huey <3,>=2.5.0
-        - importlib-metadata <9,>=3.7.0,!=4.7.0
-        - matplotlib-base <4
         - numpy <3
-        - opentelemetry-api <3,>=1.9.0
-        - opentelemetry-proto <3,>=1.9.0
-        - opentelemetry-sdk <3,>=1.9.0
-        - packaging <26
         - pandas <3
         - prometheus_flask_exporter <1
-        - protobuf <7,>=3.12.0
-        - pyarrow <22,>=4.0.0
-        - pydantic <3,>=1.10.8
-        - python-dotenv <2,>=0.19.0
-        - pyyaml <7,>=5.1
-        - requests <3,>=2.17.3
-        - scikit-learn <2
+        - querystring_parser <2
         - scipy <2
         - sqlalchemy >=1.4.0,<3
-        - sqlparse <1,>=0.4.0
-        - typing-extensions <5,>=4.0.0
-        - uvicorn <1
         - waitress <4  # [win]
-        - __unix  # [unix]
-        - __win  # [win]
+        - scikit-learn <2
+        - pyarrow <20,>=4.0.0
+        - markdown <4,>=3.3
+        - jinja2 <4,>=3.0  # [win]
+        - jinja2 <4,>=2.11  # [not win]
+        - matplotlib-base <4
+        - graphene <4
+        - fastapi <1
+        - uvicorn <1
     test:
       imports:
         - mlflow
@@ -140,6 +122,7 @@ outputs:
         - mlflow.utils
       commands:
         - mlflow --help
+        - mlflow recipes --help
         # This should not be packaged
         - test ! -f $SP_DIR/pylint_plugins  # [unix]
         - pip check
@@ -147,111 +130,96 @@ outputs:
         - set  # [win]
       requires:
         - pip
-        - python {{ python_min }}
 
   - name: mlflow-ui-dbg
     version: {{ version }}
-    build:
-      noarch: python
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python {{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
-        - __unix  # [unix]
-        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
-      requires:
-        - python {{ python_min }}
       commands:
         - exit 0
 
   - name: mlflow-skinny-gateway
     build:
       noarch: python
+      # Skip this package for cross-builds. We will only need a single upload anyways
+      skip: true  # [not linux64]
     requirements:
       host:
-        - python {{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
+        - pydantic >=1.0,<3
+        - watchfiles <1
         - aiohttp <4
-        - boto3 <2,>=1.28.56
-        - fastapi <1
-        - slowapi <1,>=0.1.9
-        - tiktoken <1
-        - uvicorn <1
-        - watchfiles <2
-        - __unix  # [unix]
-        - __win  # [win]
+        - boto3 >=1.28.56,<2
     test:
-      requires:
-        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
   - name: mlflow-gateway
     build:
       noarch: python
+      # Skip this package for cross-builds. We will only need a single upload anyways
+      skip: true  # [not linux64]
     requirements:
       host:
-        - python {{ python_min }}
+        - python
         - pip
         # Prevent solver errors with pandas
         - setuptools
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow', exact=True) }}
         - {{ pin_subpackage('mlflow-skinny-gateway', exact=True) }}
-        - __unix  # [unix]
-        - __win  # [win]
     test:
-      requires:
-        - python {{ python_min }}
       imports:
         - mlflow.gateway
 
 
   - name: mlflow-ui
     version: {{ version }}
-    build:
-      noarch: python
     requirements:
       build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
         - nodejs 20.*
         - yarn
       host:
-        - python {{ python_min }}
+        - python
         - pip
         - setuptools
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
       run:
-        - python >={{ python_min }}
+        - python
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
         - gunicorn <24  # [not win]
         - waitress <4  # [win]
         - querystring_parser <2
-        - __unix  # [unix]
-        - __win  # [win]
     script: build-mlflow.bat  # [win]
     script: build-mlflow.sh  # [unix]
     test:
-      requires:
-        - python {{ python_min }}
       commands:
         - mlflow --help
         - test -f $SP_DIR/mlflow/server/js/build/index.html               # [unix]
