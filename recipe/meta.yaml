@@ -10,9 +10,10 @@ source:
   sha256: 315ed7b95fa284c96e6581f63da0c93d1dec99271b8a8f06d4857b3ec66fd30a
   patches:
     - 0001-Build-leaner-source-maps.patch
+    - CVE-2025-0453-mlflow-3.11.1.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
