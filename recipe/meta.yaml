@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.11.1" %}
+{% set version = "3.12.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 315ed7b95fa284c96e6581f63da0c93d1dec99271b8a8f06d4857b3ec66fd30a
+  sha256: cf1f15fdb86ee417a9ef0116f40f5561836f0d4d4c2d57f95015712e95bef42e
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -48,6 +48,7 @@ outputs:
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
+        - starlette <1
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - __unix  # [unix]
@@ -118,6 +119,7 @@ outputs:
         - scipy <2
         - sqlalchemy >=1.4.0,<3
         - sqlparse <1,>=0.4.0
+        - starlette <1
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - waitress <4  # [win]
