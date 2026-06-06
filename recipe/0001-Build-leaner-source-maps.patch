@@ -11,11 +11,11 @@ diff --git a/mlflow/server/js/craco.config.js b/mlflow/server/js/craco.config.js
 index 75dd4f9..121ec3d 100644
 --- a/mlflow/server/js/craco.config.js
 +++ b/mlflow/server/js/craco.config.js
-@@ -290,6 +290,7 @@ module.exports = function () {
+@@ -349,6 +349,7 @@ module.exports = function () {
          webpackConfig = i18nOverrides(webpackConfig);
          webpackConfig = configureIframeCSSPublicPaths(webpackConfig, env);
          webpackConfig = enableOptionalTypescript(webpackConfig);
 +        delete webpackConfig.devtool;
+         webpackConfig = preservePdfjsBundles(webpackConfig);
          webpackConfig.resolve = {
            ...webpackConfig.resolve,
-           plugins: [new TsconfigPathsPlugin(), ...webpackConfig.resolve.plugins],
