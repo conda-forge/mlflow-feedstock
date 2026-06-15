@@ -37,18 +37,18 @@ outputs:
         - databricks-sdk <1,>=0.20.0
         - fastapi <1
         - gitpython <4,>=3.1.9
-        - importlib-metadata <9,>=3.7.0,!=4.7.0
+        - importlib-metadata <10,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
         - opentelemetry-proto <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
         - packaging <27
-        - protobuf <7,>=3.12.0
+        - protobuf <8,>=3.12.0
         - pydantic <3,>=2.0.0
         - python-dotenv <2,>=0.19.0
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
-        - starlette <1
+        - starlette <2
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - __unix  # [unix]
@@ -85,21 +85,22 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
+        - aiohttp <4
         - alembic <2,!=1.10.0
         - cachetools <8,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
-        - cryptography <47,>=43.0.0
+        - cryptography <49,>=43.0.0
         - databricks-sdk <1,>=0.20.0
-        - docker-py >=4.0.0,<8
+        - docker-py <8,>=4.0.0
         - fastapi <1
         - flask <4
         - flask-cors <7
         - gitpython <4,>=3.1.9
         - graphene <4
-        - gunicorn <26  # [not win]
-        - huey <3,>=2.5.4
-        - importlib-metadata <9,>=3.7.0,!=4.7.0
+        - gunicorn <27  # [not win]
+        - huey <4,>=2.5.4
+        - importlib-metadata <10,>=3.7.0,!=4.7.0
         - matplotlib-base <4
         - numpy <3
         - opentelemetry-api <3,>=1.9.0
@@ -108,18 +109,18 @@ outputs:
         - packaging <27
         - pandas <3
         - prometheus_flask_exporter <1
-        - protobuf <7,>=3.12.0
-        - pyarrow <24,>=4.0.0
+        - protobuf <8,>=3.12.0
+        - pyarrow <25,>=4.0.0
         - pydantic <3,>=2.0.0
         - python-dotenv <2,>=0.19.0
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - scikit-learn <2
-        - skops <1
         - scipy <2
-        - sqlalchemy >=1.4.0,<3
+        - skops <1
+        - sqlalchemy <3,>=1.4.0
         - sqlparse <1,>=0.4.0
-        - starlette <1
+        - starlette <2
         - typing-extensions <5,>=4.0.0
         - uvicorn <1
         - waitress <4  # [win]
@@ -189,7 +190,6 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
-        - aiohttp <4
         - boto3 <2,>=1.28.56
         - fastapi <1
         - slowapi <1,>=0.1.9
@@ -245,9 +245,8 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-skinny', exact=True) }}
         - flask <4
-        - gunicorn <24  # [not win]
+        - gunicorn <27  # [not win]
         - waitress <4  # [win]
-        - querystring_parser <2
         - __unix  # [unix]
         - __win  # [win]
     script: build-mlflow.bat  # [win]
