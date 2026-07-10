@@ -12,7 +12,7 @@ source:
     - 0001-Build-leaner-source-maps.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -109,7 +109,7 @@ outputs:
         - pandas <3
         - prometheus_flask_exporter <1
         - protobuf <7,>=3.12.0
-        - pyarrow <24,>=4.0.0
+        - pyarrow <25,>=4.0.0
         - pydantic <3,>=2.0.0
         - python-dotenv <2,>=0.19.0
         - pyyaml <7,>=5.1
