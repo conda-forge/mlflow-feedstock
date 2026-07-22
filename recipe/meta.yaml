@@ -85,7 +85,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('mlflow-ui', exact=True) }}
-        - aiohttp <4
+        - aiohttp <4,>=3.7.0
         - alembic <2,!=1.10.0
         - cachetools <8,>=5.0.0
         - click <9,>=7.0
