@@ -49,31 +49,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `mlflow, mlflow-gateway, mlflow-skinny, mlflow-skinny-gateway, mlflow-ui, mlflow-ui-dbg` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install mlflow mlflow-gateway mlflow-skinny mlflow-skinny-gateway mlflow-ui mlflow-ui-dbg
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install mlflow mlflow-gateway mlflow-skinny mlflow-skinny-gateway mlflow-ui mlflow-ui-dbg
 ```
 
-It is possible to list all of the versions of `mlflow` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add mlflow mlflow-gateway mlflow-skinny mlflow-skinny-gateway mlflow-ui mlflow-ui-dbg
+# for installing globally
+pixi global install mlflow mlflow-gateway mlflow-skinny mlflow-skinny-gateway mlflow-ui mlflow-ui-dbg
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `mlflow` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search mlflow --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search mlflow --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search mlflow --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -85,6 +127,8 @@ mamba repoquery whoneeds mlflow --channel conda-forge
 # List dependencies of `mlflow`:
 mamba repoquery depends mlflow --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -154,14 +198,17 @@ Feedstock Maintainers
 =====================
 
 * [@B-Step62](https://github.com/B-Step62/)
-* [@BenWilson2](https://github.com/BenWilson2/)
+* [@PattaraS](https://github.com/PattaraS/)
 * [@TomeHirata](https://github.com/TomeHirata/)
-* [@WeichenXu123](https://github.com/WeichenXu123/)
+* [@aaronteo-db](https://github.com/aaronteo-db/)
 * [@daniellok-db](https://github.com/daniellok-db/)
 * [@dbczumar](https://github.com/dbczumar/)
 * [@harupy](https://github.com/harupy/)
 * [@janjagusch](https://github.com/janjagusch/)
 * [@jaroslawk](https://github.com/jaroslawk/)
+* [@joshuawong-db](https://github.com/joshuawong-db/)
+* [@kriscon-db](https://github.com/kriscon-db/)
 * [@serena-ruan](https://github.com/serena-ruan/)
+* [@tanghaoji](https://github.com/tanghaoji/)
 * [@xhochy](https://github.com/xhochy/)
 
