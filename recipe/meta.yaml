@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.15.2" %}
+{% set version = "3.16.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 1c0b3afdb771aa4f7ab382546c3b8400086a12c4a055fe555561d55a30ff3d39
+  sha256: 64ea50f32fccb706f333400fce334cf4c4a8767ce6a7402ec2c3ba30a3a1a141
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -31,6 +31,7 @@ outputs:
         - setuptools
       run:
         - python >={{ python_min }}
+        - anyio <5,>=3.6.2,!=4.15.0
         - cachetools <8,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
