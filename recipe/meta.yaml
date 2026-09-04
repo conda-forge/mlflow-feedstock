@@ -31,6 +31,7 @@ outputs:
         - setuptools
       run:
         - python >={{ python_min }}
+        - anyio <5,>=3.6.2,!=4.15.0
         - cachetools <8,>=5.0.0
         - click <9,>=7.0
         - cloudpickle <4
