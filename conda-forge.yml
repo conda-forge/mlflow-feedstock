@@ -1,12 +1,12 @@
 noarch_platforms:
   - linux_64
   - win_64
-azure:
-  settings_linux:
-    swapfile_size: 10GiB
-  settings_win:
-    variables:
-      SET_PAGEFILE: 'True'
+workflow_settings:
+  pagefile_size:
+    - os: linux
+      value: 10
+    - os: win
+      value: 16
 build_platform:
   linux_aarch64: linux_64
   linux_ppc64le: linux_64
