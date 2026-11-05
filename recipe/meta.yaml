@@ -1,5 +1,5 @@
 {% set name = "mlflow" %}
-{% set version = "3.17.2" %}
+{% set version = "3.18.0" %}
 
 package:
   name: mlflow-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mlflow/mlflow/archive/refs/tags/v{{ version }}.zip
-  sha256: 470ba37c9d0ee33dabf2e42362b09c7436dc83b47696c804621fb8a32591deff
+  sha256: 2a5a23098f3728bf37bb6be6a0b11df3c44b2a396f5b8cad824c5da810b9dec1
   patches:
     - 0001-Build-leaner-source-maps.patch
 
@@ -38,7 +38,7 @@ outputs:
         - databricks-sdk <1,>=0.20.0
         - fastapi <1
         - gitpython <4,>=3.1.9
-        - importlib-metadata <10,>=3.7.0,!=4.7.0
+        - importlib-metadata <11,>=3.7.0,!=4.7.0
         - opentelemetry-api <3,>=1.9.0
         - opentelemetry-proto <3,>=1.9.0
         - opentelemetry-sdk <3,>=1.9.0
@@ -46,6 +46,7 @@ outputs:
         - protobuf <8,>=3.12.0
         - pydantic <3,>=2.0.0
         - python-dotenv <2,>=0.19.0
+        - python-multipart <1,>=0.0.18
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - sqlparse <1,>=0.4.0
@@ -101,7 +102,7 @@ outputs:
         - graphene <4
         - gunicorn <27  # [not win]
         - huey <4,>=2.5.4
-        - importlib-metadata <10,>=3.7.0,!=4.7.0
+        - importlib-metadata <11,>=3.7.0,!=4.7.0
         - matplotlib-base <4
         - numpy <3
         - opentelemetry-api <3,>=1.9.0
@@ -111,9 +112,10 @@ outputs:
         - pandas <4
         - prometheus_flask_exporter <1
         - protobuf <8,>=3.12.0
-        - pyarrow <26,>=4.0.0
+        - pyarrow <27,>=4.0.0
         - pydantic <3,>=2.0.0
         - python-dotenv <2,>=0.19.0
+        - python-multipart <1,>=0.0.18
         - pyyaml <7,>=5.1
         - requests <3,>=2.17.3
         - scikit-learn <2
